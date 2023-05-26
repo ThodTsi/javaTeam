@@ -1,4 +1,4 @@
 public class Product{
-    int code,afm;
-    String desc;
+    private int code,afm;
+    private String desc;
 }
