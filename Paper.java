@@ -1,4 +1,4 @@
-public class Paper extends Type, Ad{
+public class Printed extends AdType{
 
     int priceF, priceM, priceL;
     
