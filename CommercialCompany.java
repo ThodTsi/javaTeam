@@ -1,4 +1,4 @@
 public class CommercialComppany{
-    int afm;
-    String name;
+    private int afm;
+    private String name;
 }
