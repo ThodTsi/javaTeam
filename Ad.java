@@ -1,4 +1,3 @@
 public class Ad{
-    int Tcode, Pcode;
-    String duration;
-}
+    private int code_type, code_prod, duration, detail;
+    
