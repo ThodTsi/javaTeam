@@ -9,6 +9,6 @@ class MainApp{
     HashMap <Integer,Product> products = new HashMap <Integer,Product>;
     HashMap <Integer,AdType> types = new HashMap <Integer,AdType>;
     HashMap <Integer,Ad> adverts = new HashMap <Integer,Ad>;
-    System.out.println("oumpoi");
+   
     }
 }
