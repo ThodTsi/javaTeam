@@ -1,4 +1,9 @@
 public class CommercialCompany{
-    private int afm;
-    private String name;
+    private String afm, name;
+    
+    CommercialCompany(int afm, String name){
+        this.afm = afm;
+        this.name = name;
+    }
+
 }
