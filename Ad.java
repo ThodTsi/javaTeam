@@ -11,6 +11,9 @@ public class Ad{
         return "Code of type: " + code_type + "/n" + "Code of product: " + code_prod + "/n" + "Duration in days: " + duration + "/n" + "Details: " + details; 
     }
 
+    public int getDuration(){
+        return duration;
+    }
 
 
 
