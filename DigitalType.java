@@ -8,4 +8,18 @@ public class DigitalType extends AdType{
         this.ppsAfternoon = ppsAfternoon;
         this.ppsNight = ppsNight;
     }
+
+    public int cost(int dur, String timezone,int days){
+        int c;
+        if(timezone=="Morning"){
+            c = ppsMor;
+        }else if(timezone=="Noon"){
+            c = ppsNoon;
+        }else if(timezone=="Afternoon"){
+            c = ppsAfternoon;
+        }else{
+            c = ppsNight;
+        }
+        return c*dur*days;
+    }
 }
