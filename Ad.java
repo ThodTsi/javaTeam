@@ -6,4 +6,12 @@ public class Ad{
         this.duration = duration;
         this.detail = detail;
     }
+
+    public String toString(){
+        return "Code of type: " + code_type + "/n" + "Code of product: " + code_prod + "/n" + "Duration in days: " + duration + "/n" + "Details: " + detail; 
+    }
+
+
+
+
 }
