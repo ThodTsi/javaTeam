@@ -4,7 +4,7 @@ public class WebType extends AdType{
         super(code,description,afm);
         this.ppd = ppd;
         this.cost_auto = cost_auto;
-        this.extrap_cost;
+        this.extrap_cost = extrap_cost;
     }
 
 }
