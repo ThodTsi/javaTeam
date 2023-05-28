@@ -5,4 +5,12 @@ class DigitalAd extends Ad{
         this.dur_sec = dur_sec;
         this.timezone = timezone;
     }
+
+    public String toString(){
+        return super.toString() + "/n" + "Duration in seconds: " + dur_sec + "/n" + "Timezone: " + timezone ;
+    }
+
+
+
+
 }
