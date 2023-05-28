@@ -1,7 +1,7 @@
 class PrintedAd extends Ad{
     private int words, position;
-    PrintedAd(int code_type, int code_prod, int duration, int detail, int words, int position){
-        super(code_type,code_prod,duration,detail);
+    PrintedAd(int code_type, int code_prod, int duration, int details, int words, int position){
+        super(code_type,code_prod,duration,details);
         this.words = words;
         this.position = position;
 
