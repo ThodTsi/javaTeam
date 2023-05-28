@@ -7,5 +7,15 @@ public class PrintedType extends AdType{
         this.ppwMid = ppwMid;
         this.ppwLast = ppwLast;
     }
+
+    public int cost(int words, String pos, int dur){
+        if (pos.equals("First")){
+            return ppwFirst * words * dur;
+        }else if(pos.equals("Mid")){
+            return ppwMid * words * dur;
+        }else{
+            return ppwLast * words * dur;
+        }
+    }
     
 }

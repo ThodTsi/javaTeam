@@ -62,6 +62,7 @@ class mainApp{
                     System.out.print("Price per second night: ");
                     int ppsNight = in.nextInt();
                     DigitalType type = new DigitalType(codeType, descriptionType, afmType, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
+                    types.add(type);
                 }else if(choice == 3){
                     System.out.print("Price per day: ");
                     int ppd = in.nextInt();
@@ -70,7 +71,10 @@ class mainApp{
                     System.out.print("Price per extra page: ");
                     int extrap_cost = in.nextInt();
                     WebType type = new WebType(codeType, descriptionType, afmType, ppd, cost_auto,extrap_cost);
+                    types.add(type);
                 }
+
+                
                 break;
             case 3:
                 System.out.println("Select type: ");
@@ -94,7 +98,7 @@ class mainApp{
                     System.out.print("Number of words: ");
                     int words = in.nextInt();
                     System.out.print("Page position: ");
-                    int position = in.nextInt();
+                    String position = in.nextLine();
                     PrintedAd advert = new PrintedAd(codeType, codeProd, duration, details, words, position);
                     adverts.add(advert);
                 }else if(codeProd == 2){
@@ -123,6 +127,18 @@ class mainApp{
                     System.out.print(it.next());
                 }
                 break;
+
+            case 5:
+                int i = 1
+                for(CommercialCompany com: company){
+                    System.out.println(i + ". " + com.getName());
+                    i ++;
+                }
+                System.out.print("Select company: ");
+                int select = in.nextInt();
+                if (select>0 && select<=company.size()){
+
+                }
                 
                 
 
