@@ -19,7 +19,7 @@ class mainApp{
     System.out.println("8. Calculate cost of a products' ad");
     System.out.println("9. Show ad cost per product");
     int option = in.nextInt();
-    while(option!0){
+    while(option!=0){
         switch(option){
             case 1:
                 System.out.print("Give afm: ");
@@ -73,7 +73,46 @@ class mainApp{
                 }
                 break;
             case 3:
-                
+                System.out.println("Select type: ");
+                System.out.println("1. Printed ");
+                System.out.println("2. Digital: ");
+                System.out.println("3. Web: ");
+                codeType = in.nextInt();
+                System.out.print("Code of product: ");
+                int codeProd = in.nextInt();
+                System.out.print("Product description: ");
+                String description = in.nextLine();
+                System.out.println("Supplier AFM: ");
+                String afm = in.nextLine();
+                Product prod = new Product(codeProd,afm,description);
+                products.add(prod);
+                System.out.print("Duration: ");
+                int duration = in.nextInt();
+                System.out.print("Details: ");
+                int details = in.nextInt();
+                if(codeProd == 1){
+                    System.out.print("Number of words: ");
+                    int words = in.nextInt();
+                    System.out.print("Page position: ");
+                    int position = in.nextInt();
+                    PrintedAd advert = new PrintedAd(codeType, codeProd, duration, details, words, position);
+                    adverts.add(advert);
+                }else if(codeProd == 2){
+                    System.out.print("Duration(sec): ");
+                    int dur_sec = in.nextInt();
+                    System.out.print("Timezone: ");
+                    int timezone = in.nextInt();
+                    DigitalAd advert = new DigitalAd(codeType, codeProd, duration, details, dur_sec, timezone);
+                    adverts.add(advert);
+                }else if(codeProd == 3){
+                    System.out.print("Auto show ad: ");
+                    int autoshow = in.nextInt();
+                    System.out.print("Extra pages: ");
+                    int extrap = in.nextInt();
+                    WebAd advert = new WebAd(codeType, codeProd, duration, details, autoshow, extrap);
+                    adverts.add(advert);
+                }
+
 
                 break;
 
@@ -81,7 +120,7 @@ class mainApp{
             case 4:
                 Iterator<Ad> it = adverts.iterator();
                 while(it.hasNext()){
-                    System.out.print(it.Next());
+                    System.out.print(it.next());
                 }
                 break;
                 
