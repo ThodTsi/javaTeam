@@ -4,7 +4,7 @@ public class Product{
     Product(int code, String afm, String description){
         this.code = code;
         this.afm = afm;
-        this.description;
+        this.description = description;
 
     }
 }
