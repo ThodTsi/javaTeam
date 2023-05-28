@@ -7,4 +7,9 @@ class PrintedAd extends Ad{
 
 
     }
+
+    public String toString(){
+        return super.toString() + "/n" + "Words: " + words + "/n" + "Position: " + position ;
+    }
+
 }
