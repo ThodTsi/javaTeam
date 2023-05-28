@@ -19,61 +19,73 @@ class mainApp{
     System.out.println("8. Calculate cost of a products' ad");
     System.out.println("9. Show ad cost per product");
     int option = in.nextInt();
-    switch(option){
-        case 1:
-            System.out.print("Give afm: ");
-            in.nextLine();
-            String afmCom = in.nextLine();
-            System.out.print("Give name: ");
-            String nameCom = in.nextLine();
-            CommercialCompany comp = new CommercialCompany(afmCom,nameCom);
-            company.add(comp);
-            break;
-        case 2:
-            System.out.print("Give code: ");
-            int codeType = in.nextInt();
-            System.out.print("Give description: ");
-            String descriptionType = in.nextLine();
-            in.nextLine();
-            System.out.print("Give afm: ");
-            String afmType = in.nextLine();
-            System.out.println("Select type: ");
-            System.out.println("1. Printed ");
-            System.out.println("2. Digital: ");
-            System.out.println("3. Web: ");
-            int choice = in.nextInt();
-            if (choice == 1){
-                System.out.print("Price per word first page: ");
-                int ppwFirst = in.nextInt();
-                System.out.print("Price per word in between: ");
-                int ppwMid = in.nextInt();
-                System.out.print("Price per word last page: ");
-                int ppwLast = in.nextInt();
-                PrintedType type = new PrintedType(codeType, descriptionType, afmType, ppwFirst, ppwMid, ppwLast);
-                types.add(type);
-            }else if(choice == 2){
-                System.out.print("Price per second morning: ");
-                int ppsMor = in.nextInt();
-                System.out.print("Price per second noon: ");
-                int ppsNoon = in.nextInt();
-                System.out.print("Price per second afternoon: ");
-                int ppsAfternoon = in.nextInt();
-                System.out.print("Price per second night: ");
-                int ppsNight = in.nextInt();
-                DigitalType type = new DigitalType(codeType, descriptionType, afmType, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
-            }else if(choice == 3){
-                System.out.print("Price per day: ");
-                int ppd = in.nextInt();
-                System.out.print("Auto show cost: ");
-                int cost_auto = in.nextInt();
-                System.out.print("Price per extra page: ");
-                int extrap_cost = in.nextInt();
-                WebType type = new WebType(codeType, descriptionType, afmType, ppd, cost_auto,extrap_cost);
-            }
-            break;
-        case 3:
-            
-            
+    while(option!0){
+        switch(option){
+            case 1:
+                System.out.print("Give afm: ");
+                in.nextLine();
+                String afmCom = in.nextLine();
+                System.out.print("Give name: ");
+                String nameCom = in.nextLine();
+                CommercialCompany comp = new CommercialCompany(afmCom,nameCom);
+                company.add(comp);
+                break;
+            case 2:
+                System.out.print("Give code: ");
+                int codeType = in.nextInt();
+                System.out.print("Give description: ");
+                String descriptionType = in.nextLine();
+                in.nextLine();
+                System.out.print("Give afm: ");
+                String afmType = in.nextLine();
+                System.out.println("Select type: ");
+                System.out.println("1. Printed ");
+                System.out.println("2. Digital: ");
+                System.out.println("3. Web: ");
+                int choice = in.nextInt();
+                if (choice == 1){
+                    System.out.print("Price per word first page: ");
+                    int ppwFirst = in.nextInt();
+                    System.out.print("Price per word in between: ");
+                    int ppwMid = in.nextInt();
+                    System.out.print("Price per word last page: ");
+                    int ppwLast = in.nextInt();
+                    PrintedType type = new PrintedType(codeType, descriptionType, afmType, ppwFirst, ppwMid, ppwLast);
+                    types.add(type);
+                }else if(choice == 2){
+                    System.out.print("Price per second morning: ");
+                    int ppsMor = in.nextInt();
+                    System.out.print("Price per second noon: ");
+                    int ppsNoon = in.nextInt();
+                    System.out.print("Price per second afternoon: ");
+                    int ppsAfternoon = in.nextInt();
+                    System.out.print("Price per second night: ");
+                    int ppsNight = in.nextInt();
+                    DigitalType type = new DigitalType(codeType, descriptionType, afmType, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
+                }else if(choice == 3){
+                    System.out.print("Price per day: ");
+                    int ppd = in.nextInt();
+                    System.out.print("Auto show cost: ");
+                    int cost_auto = in.nextInt();
+                    System.out.print("Price per extra page: ");
+                    int extrap_cost = in.nextInt();
+                    WebType type = new WebType(codeType, descriptionType, afmType, ppd, cost_auto,extrap_cost);
+                }
+                break;
+            case 3:
+                
+
+                break;
+
+
+            case 4:
+                Iterator<Ad> it = adverts.iterator();
+                while(it.hasNext()){
+                    System.out.print(it.Next());
+                }
+                break;
+                
+                
 
 
 
@@ -90,8 +102,10 @@ class mainApp{
 
 
 
-        default:
-            break;
+            default:
+                break;
+
+        }
         
     }
 
