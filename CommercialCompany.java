@@ -6,4 +6,8 @@ public class CommercialCompany{
         this.name = name;
     }
 
+    public String getName(){
+        return this.name;
+    }
+
 }
