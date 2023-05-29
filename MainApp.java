@@ -36,6 +36,7 @@ class mainApp{
 
                     System.out.print("Give afm: ");
                     String afmCom = in.nextLine();
+                    in.nextLine();
 
                     System.out.print("Give name: ");
                     String nameCom = in.nextLine();
@@ -54,6 +55,7 @@ class mainApp{
 
                     System.out.print("Give description: ");
                     String descriptionType = in.nextLine();
+                    in.nextLine();
 
                     System.out.print("Give company AFM: ");
                     String afmComp = in.nextLine();
@@ -108,6 +110,7 @@ class mainApp{
 
                     System.out.print("Product description: ");
                     String description = in.nextLine();
+                    in.nextLine();
 
                     System.out.print("Supplier AFM: ");
                     String afmSup = in.nextLine();
@@ -120,6 +123,7 @@ class mainApp{
 
                     System.out.print("Details: ");
                     String details = in.nextLine();
+                    in.nextLine();
 
                     if(codeType == 1){
                         System.out.print("Number of words: ");
@@ -155,8 +159,10 @@ class mainApp{
                 case 4:
 
                     Iterator<Ad> it = adverts.iterator();
+                    int p =1;
                     while(it.hasNext()){
-                        System.out.print(it.next().toString());
+                        System.out.print("Ad" + p + "\n" + it.next().toString() + "\n");
+                        p++;
                     }
                     break;
 
@@ -173,11 +179,16 @@ class mainApp{
                     
                     if (select>0 && select<=company.size()){
                         String afm = company.get(select-1).getAfm();
+                        System.out.println(afm);
+
+                        i=1;
                         for(Ad advert: adverts){
                             for(AdType type : types){
                                 if(advert.getTypeCode()==type.getCode()){
+                                    System.out.println(type.getAfm());
                                     if(type.getAfm().equals(afm)){
-                                        System.out.println(advert.toString());
+                                        System.out.println("Ad" + i + advert.toString() + "\n");
+                                        i++;
                                     }
                                 }
                             }
