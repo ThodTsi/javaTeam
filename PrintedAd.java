@@ -23,5 +23,7 @@ class PrintedAd extends Ad{
 
     
 
+    
+
 
 }

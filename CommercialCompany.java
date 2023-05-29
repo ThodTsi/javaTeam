@@ -10,4 +10,8 @@ public class CommercialCompany{
         return "Afm: " + afm + "/n" + "Name: " + name;
     }
 
+    public String getAfm(){
+        return this.afm;
+    }
+
 }
