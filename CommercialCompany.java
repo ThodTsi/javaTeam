@@ -1,4 +1,5 @@
 public class CommercialCompany{
+    
     private String afm, name;
     
     CommercialCompany(String afm, String name){
@@ -12,6 +13,10 @@ public class CommercialCompany{
 
     public String getAfm(){
         return this.afm;
+    }
+
+    public String getName(){
+        return this.name;
     }
 
 }

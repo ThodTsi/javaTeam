@@ -1,6 +1,8 @@
 class PrintedAd extends Ad{
+
     private int words;
     private String position;
+
     PrintedAd(int code_type, int code_prod, int duration, String details, int words, String position){
         super(code_type,code_prod,duration,details);
         this.words = words;
@@ -20,10 +22,5 @@ class PrintedAd extends Ad{
     public String getPosition(){
         return this.position;
     }
-
-    
-
-    
-
 
 }

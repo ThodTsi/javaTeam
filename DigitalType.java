@@ -11,11 +11,11 @@ public class DigitalType extends AdType{
 
     public int cost(int dur, String timezone,int days){
         int c;
-        if(timezone=="Morning"){
+        if(timezone.equals("Morning")){
             c = ppsMor;
-        }else if(timezone=="Noon"){
+        }else if(timezone.equals("Noon")){
             c = ppsNoon;
-        }else if(timezone=="Afternoon"){
+        }else if(timezone.equals("Afternoon")){
             c = ppsAfternoon;
         }else{
             c = ppsNight;
