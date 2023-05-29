@@ -36,23 +36,23 @@ class mainApp{
                 System.out.print("Give description: ");
                 String descriptionType = in.nextLine();
                 in.nextLine();
-                System.out.print("Give supplier AFM: ")
+                System.out.print("Give supplier AFM: ");
                 String afmSup = in.nextLine();
                 System.out.println("Select type: ");
                 System.out.println("1. Printed ");
                 System.out.println("2. Digital ");
                 System.out.println("3. Web ");
-                Int option = in.nextInt();
-                if (option == 1){
+                int op = in.nextInt();
+                if (op == 1){
                     System.out.print("Price per word first page: ");
                     int ppwFirst = in.nextInt();
                     System.out.print("Price per word in between: ");
                     int ppwMid = in.nextInt();
                     System.out.print("Price per word last page: ");
                     int ppwLast = in.nextInt();
-                    PrintedType type = new PrintedType(codeType, descriptionType, , ppwFirst, ppwMid, ppwLast);
+                    PrintedType type = new PrintedType(codeType, descriptionType, afmSup, ppwFirst, ppwMid, ppwLast);
                     types.add(type);
-                }else if(option == 2){
+                }else if(op == 2){
                     System.out.print("Price per second morning: ");
                     int ppsMor = in.nextInt();
                     System.out.print("Price per second noon: ");
@@ -61,16 +61,16 @@ class mainApp{
                     int ppsAfternoon = in.nextInt();
                     System.out.print("Price per second night: ");
                     int ppsNight = in.nextInt();
-                    DigitalType type = new DigitalType(codeType, descriptionType, afmType, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
+                    DigitalType type = new DigitalType(codeType, descriptionType, afmSup, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
                     types.add(type);
-                }else if(option == 3){
+                }else if(op == 3){
                     System.out.print("Price per day: ");
                     int ppd = in.nextInt();
                     System.out.print("Auto show cost: ");
                     int cost_auto = in.nextInt();
                     System.out.print("Price per extra page: ");
                     int extrap_cost = in.nextInt();
-                    WebType type = new WebType(codeType, descriptionType, afmType, ppd, cost_auto,extrap_cost);
+                    WebType type = new WebType(codeType, descriptionType, afmSup, ppd, cost_auto,extrap_cost);
                     types.add(type);
                 }
 
@@ -81,6 +81,8 @@ class mainApp{
                 System.out.println("1. Printed ");
                 System.out.println("2. Digital ");
                 System.out.println("3. Web ");
+                op = in.nextInt();
+                System.out.print("Code of type: ");
                 codeType = in.nextInt();
                 System.out.print("Code of product: ");
                 int codeProd = in.nextInt();
@@ -96,7 +98,7 @@ class mainApp{
                 in.nextLine();
                 System.out.print("Details: ");
                 String details = in.nextLine();
-                if(codeType == 1){
+                if(op == 1){
                     System.out.print("Number of words: ");
                     int words = in.nextInt();
                     in.nextLine();
@@ -104,14 +106,14 @@ class mainApp{
                     String position = in.nextLine();
                     PrintedAd advert = new PrintedAd(codeType, codeProd, duration, details, words, position);
                     adverts.add(advert);
-                }else if(codeType == 2){
+                }else if(op == 2){
                     System.out.print("Duration(sec): ");
                     int dur_sec = in.nextInt();
                     System.out.print("Timezone: ");
-                    int timezone = in.nextInt();
+                    String timezone = in.nextLine();
                     DigitalAd advert = new DigitalAd(codeType, codeProd, duration, details, dur_sec, timezone);
                     adverts.add(advert);
-                }else if(codeType == 3){
+                }else if(op == 3){
                     System.out.print("Auto show ad: ");
                     int autoshow = in.nextInt();
                     System.out.print("Extra pages: ");
@@ -148,14 +150,45 @@ class mainApp{
                                 System.out.println(advert.toString());
                             }
                         
-                    }
+                        }
                     }
                     
 
-                }
+                    }
                 }
                 break;
-                
+            case 6:
+                i = 1;
+                for(CommercialCompany com: company){
+                    System.out.println(i + ". " + com.getName());
+                    i ++;
+                }
+                System.out.print("Select company: ");
+                int select = in.nextInt();
+                int total_cost = 0
+                if (select>0 && select<=company.size()){
+                    for (AdType ad: types){
+                        if(company.get(select-1).getAfm().equals(ad.getAfm())){
+                            for(Ad advert: adverts){
+                                if (advert.getProdcode() == ad.getCode()){
+                                    if(ad.getClassName().equals("PrintedType")){
+                                        total_cost += ad.cost( advert.getWords(), advert.getPosition(), advert.getDur());
+
+                                    }else if(ad.getClassName().equals("DigitalType")){
+                                        total_cost += ad.cost(advert.getDursec(), advert.getTimezone(), advert.getDur());
+                                    }else{
+                                        total_cost += ad.cost(advert.getAuto(), advert.getExtra(), advert.getDur());
+                                    }
+                            }
+                        
+                        }
+                    }
+                    
+
+                    }
+                    System.out.println("Total cost = " + total_cost);
+                }
+                break;
                 
 
 
