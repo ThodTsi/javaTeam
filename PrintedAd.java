@@ -10,7 +10,7 @@ class PrintedAd extends Ad{
     }
 
     public String toString(){
-        return super.toString() + "/nWords: " + words + "/nPosition: " + position ;
+        return super.toString() + "\nWords: " + words + "\nPosition: " + position ;
     }
 
     public int getWords(){
