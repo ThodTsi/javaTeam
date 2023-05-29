@@ -137,8 +137,8 @@ class mainApp{
                 }
                 System.out.print("Select company: ");
                 int select = in.nextInt();
-                String name = company.indexOf(select-1).getName();
                 if (select>0 && select<=company.size()){
+                    
 
                 }
                 break;

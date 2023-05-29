@@ -11,7 +11,7 @@ class DigitalAd extends Ad{
     }
 
     public String toString(){
-        return super.toString() + "/nDuration in seconds: " + dur_sec + "/nTimezone: " + timezone ;
+        return super.toString() + "\nDuration in seconds: " + dur_sec + "\nTimezone: " + timezone ;
     }
     
     public int getDur(){

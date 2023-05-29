@@ -7,7 +7,7 @@ class WebAd extends Ad{
     }
 
     public String toString(){
-        return super.toString() + "/nAutoshow: " + autoshow + "/nExtra pages: " + extrap ;
+        return super.toString() + "\nAutoshow: " + autoshow + "\nExtra pages: " + extrap ;
     }
 
 
