@@ -36,21 +36,23 @@ class mainApp{
                 System.out.print("Give description: ");
                 String descriptionType = in.nextLine();
                 in.nextLine();
+                System.out.print("Give supplier AFM: ")
+                String afmSup = in.nextLine();
                 System.out.println("Select type: ");
                 System.out.println("1. Printed ");
                 System.out.println("2. Digital ");
                 System.out.println("3. Web ");
-                int afmType = in.nextInt();
-                if (afmType == 1){
+                Int option = in.nextInt();
+                if (option == 1){
                     System.out.print("Price per word first page: ");
                     int ppwFirst = in.nextInt();
                     System.out.print("Price per word in between: ");
                     int ppwMid = in.nextInt();
                     System.out.print("Price per word last page: ");
                     int ppwLast = in.nextInt();
-                    PrintedType type = new PrintedType(codeType, descriptionType, afmType, ppwFirst, ppwMid, ppwLast);
+                    PrintedType type = new PrintedType(codeType, descriptionType, , ppwFirst, ppwMid, ppwLast);
                     types.add(type);
-                }else if(afmType == 2){
+                }else if(option == 2){
                     System.out.print("Price per second morning: ");
                     int ppsMor = in.nextInt();
                     System.out.print("Price per second noon: ");
@@ -61,7 +63,7 @@ class mainApp{
                     int ppsNight = in.nextInt();
                     DigitalType type = new DigitalType(codeType, descriptionType, afmType, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
                     types.add(type);
-                }else if(afmType == 3){
+                }else if(option == 3){
                     System.out.print("Price per day: ");
                     int ppd = in.nextInt();
                     System.out.print("Auto show cost: ");
@@ -137,9 +139,20 @@ class mainApp{
                 }
                 System.out.print("Select company: ");
                 int select = in.nextInt();
+                
                 if (select>0 && select<=company.size()){
+                    for (AdType ad: types){
+                        if(company.get(select-1).getAfm().equals(ad.getAfm())){
+                            for(Ad advert: adverts){
+                                if (advert.getProdcode() == ad.getCode()){
+                                System.out.println(advert.toString());
+                            }
+                        
+                    }
+                    }
                     
 
+                }
                 }
                 break;
                 
