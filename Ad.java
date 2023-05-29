@@ -16,7 +16,7 @@ public class Ad{
         return this.duration;
     }
 
-    public int getProdcode(){
+    public int getTypeCode(){
         return this.code_type;
     }
 
