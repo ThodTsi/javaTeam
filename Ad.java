@@ -16,6 +16,10 @@ public class Ad{
         return this.duration;
     }
 
+    public int getProdcode(){
+        return this.code_type;
+    }
+
 
 
 }
