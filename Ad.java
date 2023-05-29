@@ -9,7 +9,7 @@ public class Ad{
     }
 
     public String toString(){
-        return "Code of type: " + code_type + "/nCode of product: " + code_prod + "/nDuration in days: " + duration + "/nDetails: " + details; 
+        return "Code of type: " + code_type + "\nCode of product: " + code_prod + "\nDuration in days: " + duration + "\nDetails: " + details; 
     }
 
     public int getDur(){
