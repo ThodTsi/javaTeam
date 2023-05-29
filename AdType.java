@@ -16,8 +16,5 @@ public class AdType {
         return this.code;
     }
     
-    public String getClassName(){
-        return this.getClass().getSimpleName();
-    }
-
+    
 }

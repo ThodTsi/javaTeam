@@ -13,8 +13,8 @@ public class Ad{
     }
 
 
-    public int getDuration(){
-        return duration;
+    public int getTypeCode(){
+        return this.code_type;
     }
 
 

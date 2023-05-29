@@ -10,10 +10,10 @@ class WebAd extends Ad{
         return super.toString() + "\nAutoshow: " + autoshow + "\nExtra pages: " + extrap ;
     }
 
-    public String getAuto(){
+    public int getAuto(){
         return this.autoshow;
     }
-    public String getExtra(){
+    public int getExtra(){
         return this.extrap;
     }
 

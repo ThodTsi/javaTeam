@@ -22,4 +22,10 @@ public class DigitalType extends AdType{
         }
         return c*dur*days;
     }
+
+
+    public String getClassName(){
+        return this.getClass().getSimpleName();
+    }
+
 }
