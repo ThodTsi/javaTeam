@@ -1,6 +1,7 @@
 public class Ad{
-    private int code_type, code_prod, duration, details;
-    Ad(int code_type, int code_prod, int duration, int details){
+    private int code_type, code_prod, duration;
+    private String details;
+    Ad(int code_type, int code_prod, int duration, String details){
         this.code_type = code_type;
         this.code_prod = code_prod;
         this.duration = duration;
@@ -8,9 +9,12 @@ public class Ad{
     }
 
     public String toString(){
-        return "Code of type: " + code_type + "/n" + "Code of product: " + code_prod + "/n" + "Duration in days: " + duration + "/n" + "Details: " + details; 
+        return "Code of type: " + code_type + "/nCode of product: " + code_prod + "/nDuration in days: " + duration + "/nDetails: " + details; 
     }
 
+    public int getDur(){
+        return this.duration;
+    }
 
 
 
