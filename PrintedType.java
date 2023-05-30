@@ -21,9 +21,5 @@ public class PrintedType extends AdType{
             return ppwLast * words * dur;
         }
     }
-
-    public String getClassName(){
-        return this.getClass().getSimpleName();
-    }
     
 }

@@ -13,4 +13,8 @@ public class Product{
     public int getCode(){
         return this.code;
     }
+
+    public String toString(){
+        return "Code:\t" + this.code + "\tAFM:\t" + this.afm + "\tDescription:\t" + this.description;
+    }
 }

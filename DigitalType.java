@@ -24,8 +24,4 @@ public class DigitalType extends AdType{
     }
 
 
-    public String getClassName(){
-        return this.getClass().getSimpleName();
-    }
-
 }

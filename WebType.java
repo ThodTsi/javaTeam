@@ -17,10 +17,4 @@ public class WebType extends AdType{
         }
     }
 
-    
-    public String getClassName(){
-        return this.getClass().getSimpleName();
-    }
-
-
 }
