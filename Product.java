@@ -9,4 +9,8 @@ public class Product{
         this.description = description;
 
     }
+
+    public int getCode(){
+        return this.code;
+    }
 }
