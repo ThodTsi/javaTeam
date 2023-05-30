@@ -9,7 +9,7 @@ class WebAd extends Ad{
     }
 
     public String toString(){
-        return super.toString() + "\tAutoshow\t" + autoshow + "\tExtra pages:\t" + extrap ;
+        return super.toString() + "\tAutoshow:\t" + autoshow + "\tExtra pages:\t" + extrap ;
     }
 
     public int getAuto(){

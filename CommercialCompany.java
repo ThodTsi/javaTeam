@@ -8,7 +8,7 @@ public class CommercialCompany{
     }
 
     public String toString(){
-        return "Afm: " + afm + "\n" + "Name: " + name;
+        return "Afm:\t" + afm  + "\tName:\t" + name;
     }
 
     public String getAfm(){

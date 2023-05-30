@@ -19,38 +19,47 @@ class mainApp{
             ArrayList<AdType> types = new ArrayList<AdType>();
             ArrayList<Ad> adverts = new ArrayList<Ad>();
 
-            company.add(new CommercialCompany("111","test1"));
-            company.add(new CommercialCompany("222","test2"));
-            company.add(new CommercialCompany("333","test3"));
-            company.add(new CommercialCompany("444","test4"));
-            products.add(new Product(10,"tileorasi","123"));
-            products.add(new Product(20,"fournos","345"));
-            products.add(new Product(30,"kanapes","456"));
-            products.add(new Product(40,"laptop","789"));
-            types.add(new PrintedType(1,"a","111",2,2,2));
-            types.add(new PrintedType(1,"b","222",4,4,4));
-            types.add(new PrintedType(1,"c","333",6,6,6));
-            types.add(new PrintedType(1,"d","444",8,8,8));
-            types.add(new DigitalType(2,"a","111",10,10,10,10));
-            types.add(new DigitalType(2,"b","222",15,15,15,15));
-            types.add(new DigitalType(2,"c","333",20,20,20,20));
-            types.add(new DigitalType(2,"d","444",25,25,25,25));
-            types.add(new WebType(3,"a","111",0,2,4));
-            types.add(new WebType(3,"b","222",1,4,5));
-            types.add(new WebType(3,"c","333",1,3,6));
-            types.add(new WebType(3,"d","444",0,6,7));
-            adverts.add(new PrintedAd(1,20,3,"a",500,"First"));
-            adverts.add(new PrintedAd(1,25,2,"b",550,"Mid"));
-            adverts.add(new PrintedAd(1,30,4,"c",600,"Last"));
-            adverts.add(new PrintedAd(1,35,5,"d",650,"First"));
-            adverts.add(new DigitalAd(2,100,1,"a",50,"Morning"));
-            adverts.add(new DigitalAd(2,105,2,"b",52,"Noon"));
-            adverts.add(new DigitalAd(2,110,3,"c",54,"Afternoon"));
-            adverts.add(new DigitalAd(2,115,4,"d",56,"Night"));
-            adverts.add(new WebAd(3,200,1,"a",1,1));
-            adverts.add(new WebAd(3,205,1,"b",0,2));
-            adverts.add(new WebAd(3,210,1,"c",1,3));
-            adverts.add(new WebAd(3,215,1,"d",0,4));
+            company.add(new CommercialCompany("111","Company1"));
+            company.add(new CommercialCompany("222","Company2"));
+            company.add(new CommercialCompany("333","Company3"));
+            company.add(new CommercialCompany("444","Company4"));
+
+            products.add(new Product(10,"tileorasi","entona xrwmata"));
+            products.add(new Product(20,"fournos","mikrhs diastashs"));
+            products.add(new Product(30,"kanapes","kanapes-krebati"));
+            products.add(new Product(40,"laptop","dynatotha afhs"));
+            products.add(new Product(50,"kaltses","poly zestes"));
+            products.add(new Product(60,"thlefwno","4 kameres"));
+
+            types.add(new PrintedType(100,"efhmerida prwinh","111",2,2,2));
+            types.add(new PrintedType(101,"periodiko","222",4,4,4));
+            types.add(new PrintedType(102,"efhmerida bradinh","333",6,6,6));
+            types.add(new PrintedType(103,"best seller periodiko","444",8,8,8));
+
+            types.add(new DigitalType(104,"radiofwnikos stathmos boreias elladas","111",10,10,10,10));
+            types.add(new DigitalType(105,"bradinh thleoptikh ekpomph","222",15,15,15,15));
+            types.add(new DigitalType(106,"prwinh thleoptikh ekpomph","333",20,20,20,20));
+            types.add(new DigitalType(107,"radiofwnikos stathmos attikhs","444",25,25,25,25));
+
+            types.add(new WebType(108,"diadiktyakh efhmerida","111",0,2,4));
+            types.add(new WebType(109,"facebook","222",1,4,5));
+            types.add(new WebType(110,"instagram","333",1,3,6));
+            types.add(new WebType(111,"tik tok","444",0,6,7));
+
+            adverts.add(new PrintedAd(101,20,3,"aristera katw",500,"First"));
+            adverts.add(new PrintedAd(100,20,2,"aristera panw",550,"Mid"));
+            adverts.add(new PrintedAd(103,30,4,"xwris xrwma",600,"Last"));
+            adverts.add(new PrintedAd(102,10,5,"sto kentro",650,"First"));
+
+            adverts.add(new DigitalAd(106,40,1,"prin jekinhsei h ekpomph",50,"Morning"));
+            adverts.add(new DigitalAd(105,50,2,"molis teleiwsei h ekpomph",52,"Noon"));
+            adverts.add(new DigitalAd(104,60,3,"molis teleiwsei to tragoydi",54,"Afternoon"));
+            adverts.add(new DigitalAd(107,10,4,"prin arxisei to tragoydi",56,"Night"));
+
+            adverts.add(new WebAd(111,60,1,"meta th 1 to brady",1,1));
+            adverts.add(new WebAd(108,50,1,"terma panw",0,2));
+            adverts.add(new WebAd(109,30,1,"to meshmeri",1,3));
+            adverts.add(new WebAd(110,40,1,"ana 50 story",0,4));
 
             
             int option = Menu();
@@ -78,10 +87,13 @@ class mainApp{
                         System.out.println("1. Printed ");
                         System.out.println("2. Digital ");
                         System.out.println("3. Web ");
-                        int codeType;
+                        int Type;
                         do{
-                            codeType = in.nextInt();
-                        }while(codeType<0 || codeType>3);
+                            Type = in.nextInt();
+                        }while(Type<0 || Type>3);
+
+                        System.out.print("Give code: ");
+                        int codeType = in.nextInt();
 
                         System.out.print("Give description: ");
                         in.nextLine();
@@ -90,7 +102,7 @@ class mainApp{
                         System.out.print("Give company AFM: ");
                         String afmComp = in.nextLine();
 
-                        if (codeType == 1){
+                        if (Type == 1){
                             System.out.print("Price per word first page: ");
                             int ppwFirst = in.nextInt();
                             System.out.print("Price per word in between: ");
@@ -101,7 +113,7 @@ class mainApp{
                             PrintedType type = new PrintedType(codeType, descriptionType, afmComp, ppwFirst, ppwMid, ppwLast);
                             types.add(type);
 
-                        }else if(codeType == 2){
+                        }else if(Type == 2){
                             System.out.print("Price per second morning: ");
                             int ppsMor = in.nextInt();
                             System.out.print("Price per second noon: ");
@@ -114,7 +126,7 @@ class mainApp{
                             DigitalType type = new DigitalType(codeType, descriptionType, afmComp, ppsMor, ppsNoon, ppsAfternoon, ppsNight);
                             types.add(type);
 
-                        }else if(codeType == 3){
+                        }else if(Type == 3){
                             System.out.print("Price per day: ");
                             int ppd = in.nextInt();
                             System.out.print("Auto show cost: ");
@@ -134,8 +146,11 @@ class mainApp{
                         System.out.println("2. Digital ");
                         System.out.println("3. Web ");
                         do{
-                            codeType = in.nextInt();
-                        }while(codeType<0 || codeType>3);
+                            Type = in.nextInt();
+                        }while(Type<0 || Type>3);
+
+                        System.out.print("Code of type: ");
+                        codeType = in.nextInt();
 
                         System.out.print("Code of product: ");
                         int codeProd = in.nextInt();
@@ -157,7 +172,7 @@ class mainApp{
                         in.nextLine();
                         String details = in.nextLine();
 
-                        if(codeType == 1){
+                        if(Type == 1){
                             System.out.print("Number of words: ");
                             int words = in.nextInt();
                             in.nextLine();
@@ -170,7 +185,7 @@ class mainApp{
                             PrintedAd advert = new PrintedAd(codeType, codeProd, duration, details, words, position);
                             adverts.add(advert);
 
-                        }else if(codeType == 2){
+                        }else if(Type == 2){
                             System.out.print("Duration(sec): ");
                             int dur_sec = in.nextInt();
                             System.out.println("Timezone: " + "\nMornign\nNoon\nAfternoon\nNight");
@@ -182,7 +197,7 @@ class mainApp{
                             DigitalAd advert = new DigitalAd(codeType, codeProd, duration, details, dur_sec, timezone);
                             adverts.add(advert);
 
-                        }else if(codeType == 3){
+                        }else if(Type == 3){
                             System.out.println("Auto show ad: " + "\n1.Yes\n2.No");
                             int autoshow;
                            // do{
@@ -284,6 +299,7 @@ class mainApp{
 
                         for(Product prods : products){
                             pl=0;
+
                             for(Ad ad : adverts){
                                 if(ad.getProdCode() == prods.getCode()){
                                     for(AdType type : types){
@@ -295,16 +311,15 @@ class mainApp{
                                 }
                             }
 
-                        ads.add(pl);
-                        adsInProds.put(pl, prods);
+                            ads.add(pl);
+                            adsInProds.put(pl, prods);
 
                         }
                         
-                        ads.sort(Comparator.reverseOrder());
-                        i=0;
+                        /*ads.sort(Comparator.reverseOrder()); idio plhthos diafhmisewn
                         for(int k : ads){
                             System.out.println(adsInProds.get(k).toString() + "\tNumber of ads:\t " + k);
-                        }
+                        }*/
                         break;
 
                     case 8:
@@ -326,12 +341,15 @@ class mainApp{
                                 for(AdType type : types){
                                     if(ad.getTypeCode() == type.getCode()){
 
-                                        System.out.println("Cost:\t" + cost(type,ad));
+                                        System.out.println("Cost of Ad:\t" + cost(type,ad));
+                                        pl += cost(type, ad);
                                     }
                                 }
 
                             }
                         }
+
+                        System.out.println("Total cost is:\t" + pl);
                         break;
         
                     default:
@@ -365,7 +383,7 @@ class mainApp{
                         costs.sort(Comparator.reverseOrder());
                         i=0;
                         for(int k : costs){
-                            System.out.println(prodCost.get(k).toString() + "\tCost of ads:\t" + k);
+                            System.out.println(prodCost.get(k).toString() + "\t\tCost of ads:\t" + k);
                         }                        
                         break;
 
