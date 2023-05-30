@@ -11,7 +11,7 @@ public class Ad{
     }
 
     public String toString(){
-        return "Code of type:\t" + code_type + "\tCode of product\t" + code_prod + "\tDuration in days:\t" + duration + "\tDetails:\t" + details; 
+        return "Code of type: " + code_type + "\tCode of product: " + code_prod + "\tDuration in days: " + duration + "\tDetails: " + details + "\t"; 
     }
 
 

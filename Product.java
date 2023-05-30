@@ -15,6 +15,6 @@ public class Product{
     }
 
     public String toString(){
-        return "Code:\t" + this.code + "\tAFM:\t" + this.afm + "\tDescription:\t" + this.description;
+        return "Code: " + this.code + "\tAFM: " + this.afm + "\tDescription: " + this.description ;
     }
 }

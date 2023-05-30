@@ -335,13 +335,15 @@ class mainApp{
                         do{
                             select = in.nextInt();
                         }while(select < 0 || select > products.size());
+                        i=0;
 
                         for(Ad ad : adverts){
                             if(ad.getProdCode() == products.get(select-1).getCode()){
                                 for(AdType type : types){
                                     if(ad.getTypeCode() == type.getCode()){
 
-                                        System.out.println("Cost of Ad:\t" + cost(type,ad));
+                                        i++;
+                                        System.out.println("Cost of Ad" +i + ": " + cost(type,ad));
                                         pl += cost(type, ad);
                                     }
                                 }
@@ -383,7 +385,7 @@ class mainApp{
                         costs.sort(Comparator.reverseOrder());
                         i=0;
                         for(int k : costs){
-                            System.out.println(prodCost.get(k).toString() + "\t\tCost of ads:\t" + k);
+                            System.out.println(prodCost.get(k).toString() + "\tCost of ads:\t" + k);
                         }                        
                         break;
 

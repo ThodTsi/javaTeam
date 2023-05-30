@@ -10,7 +10,7 @@ class DigitalAd extends Ad{
     }
 
     public String toString(){
-        return super.toString() + "\tDuration in seconds: " + dur_sec + "\tTimezone: " + timezone ;
+        return super.toString() + "\tDuration in seconds: " + dur_sec + "\tTimezone: " + timezone + "\t";
     }
     
 
