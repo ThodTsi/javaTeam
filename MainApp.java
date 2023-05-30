@@ -316,9 +316,15 @@ class mainApp{
 
                         }
                         
-                        /*ads.sort(Comparator.reverseOrder()); idio plhthos diafhmisewn
+                       /* ads.sort(Comparator.reverseOrder());
+                        ArrayList<Product> prodsInOrder = new ArrayList<Product>();
+
                         for(int k : ads){
-                            System.out.println(adsInProds.get(k).toString() + "\tNumber of ads:\t " + k);
+                            while( adsInProds.containsKey(k)){
+
+                                prodsInOrder.add(adsInProds.get(k));
+                                adsInProds.remove(k, adsInProds.get(k));
+                            }
                         }*/
                         break;
 
@@ -343,7 +349,7 @@ class mainApp{
                                     if(ad.getTypeCode() == type.getCode()){
 
                                         i++;
-                                        System.out.println("Cost of Ad" +i + ": " + cost(type,ad));
+                                        System.out.println("Cost of Ad" + i + ": " + cost(type,ad));
                                         pl += cost(type, ad);
                                     }
                                 }
@@ -444,38 +450,4 @@ class mainApp{
 
     }
 
-    /*public static void initalize(Arraylist<> company,){
-        company.add(new CommercialCompany("111","test1"));
-        company.add(new CommercialCompany("222","test2"));
-        company.add(new CommercialCompany("333","test3"));
-        company.add(new CommercialCompany("444","test4"));
-        products.add(new Product(10,"tileorasi","123"));
-        products.add(new Product(20,"fournos","345"));
-        products.add(new Product(30,"kanapes","456"));
-        products.add(new Product(40,"laptop","789"));
-        types.add(new PrintedType(1,"a","111",2,2,2));
-        types.add(new PrintedType(1,"b","222",4,4,4));
-        types.add(new PrintedType(1,"c","333",6,6,6));
-        types.add(new PrintedType(1,"d","444",8,8,8));
-        types.add(new DigitalType(2,"a","111",10,10,10,10));
-        types.add(new DigitalType(2,"b","222",15,15,15,15));
-        types.add(new DigitalType(2,"c","333",20,20,20,20));
-        types.add(new DigitalType(2,"d","444",25,25,25,25));
-        types.add(new WebType(3,"a","111",0,2,4));
-        types.add(new WebType(3,"b","222",1,4,5));
-        types.add(new WebType(3,"c","333",1,3,6));
-        types.add(new WebType(3,"d","444",0,6,7));
-        adverts.add(new PrintedAd(1,20,3,"a",500,"First"));
-        adverts.add(new PrintedAd(1,25,2,"b",550,"Mid"));
-        adverts.add(new PrintedAd(1,30,4,"c",600,"Last"));
-        adverts.add(new PrintedAd(1,35,5,"d",650,"First"));
-        adverts.add(new DigitalAd(2,100,1,"a",50,"Morning"));
-        adverts.add(new DigitalAd(2,105,2,"b",52,"Noon"));
-        adverts.add(new DigitalAd(2,110,3,"c",54,"Afternoon"));
-        adverts.add(new DigitalAd(2,115,4,"d",56,"Night"));
-        adverts.add(new WebAd(3,200,1,"a",1,1));
-        adverts.add(new WebAd(3,205,1,"b",0,2));
-        adverts.add(new WebAd(3,210,1,"c",1,3));
-        adverts.add(new WebAd(3,215,1,"d",0,4));
-    }*/
 }
