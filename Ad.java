@@ -2,7 +2,7 @@ public class Ad{
 
     private int code_type, code_prod, duration;
     private String details;
-    
+
     Ad(int code_type, int code_prod, int duration, String details){
         this.code_type = code_type;
         this.code_prod = code_prod;
@@ -11,7 +11,7 @@ public class Ad{
     }
 
     public String toString(){
-        return "Code of type: " + code_type + "\nCode of product: " + code_prod + "\nDuration in days: " + duration + "\nDetails: " + details; 
+        return "Code of type: " + code_type + "\tCode of product: " + code_prod + "\tDuration in days: " + duration + "\tDetails: " + details; 
     }
 
 
@@ -23,5 +23,8 @@ public class Ad{
         return this.code_type;
     }
 
+    public int getProdCode(){
+        return this.code_prod;
+    }
 
 }
