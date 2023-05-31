@@ -156,14 +156,18 @@ class mainApp{
                         in.nextLine();
                         String details = in.nextLine();
 
+
                         if(Type == 1){
                             System.out.print("Number of words: ");
                             int words = in.nextInt();
                             System.out.println("Page position: " + "\nFirst\nMid\nLast");
-                            String position;
-                            //do{
-                                position = in.nextLine();
-                            //}while(position != "First" && position !="Mid" && position != "Last");
+                            String position = in.nextLine();
+                            if((!position.equals("First")) && (!position.equals("Mid")) && (!position.equals("Last"))){
+                                while((!position.equals("First")) && (!position.equals("Mid")) && (!position.equals("Last"))){
+                                    System.out.print("Give right position: ");
+                                    position = in.nextLine();
+                                }
+                            }
 
                             PrintedAd advert = new PrintedAd(codeType, codeProd, duration, details, words, position);
                             adverts.add(advert);
@@ -172,20 +176,24 @@ class mainApp{
                             System.out.print("Duration(sec): ");
                             int dur_sec = in.nextInt();
                             System.out.println("Timezone: " + "\nMornign\nNoon\nAfternoon\nNight");
-                            String timezone;
-                            //do{
-                                timezone = in.nextLine();
-                            //}while(timezone != "Morning" && timezone != "Noon" && timezone != "Afternoon" && timezone != "Night");
+                            String timezone = in.nextLine();
+                            if((!timezone.equals("Morning")) && (!timezone.equals("Noon")) && (!timezone.equals("Afternoon")) && (!timezone.equals("Night"))){
+                                while((!timezone.equals("Morning")) && (!timezone.equals("Noon")) && (!timezone.equals("Afternoon")) && (!timezone.equals("Night"))){
+                                    System.out.print("Give right timezone: ");
+                                    timezone = in.nextLine();
+                                }
+                            }
 
                             DigitalAd advert = new DigitalAd(codeType, codeProd, duration, details, dur_sec, timezone);
                             adverts.add(advert);
 
                         }else if(Type == 3){
                             System.out.println("Auto show ad: " + "\n1.Yes\n2.No");
-                            int autoshow;
-                           do{
+                            int autoshow = in.nextInt();
+                            while(autoshow !=1 && autoshow != 0){
+                                System.out.print("Give 1 for 'Yes' or 2 for 'No': ");
                                 autoshow = in.nextInt();
-                            }while(autoshow !=1 && autoshow != 1);
+                            }
                             
                             if(autoshow==2){
                                 autoshow = 0;
@@ -240,8 +248,8 @@ class mainApp{
                                 for(Ad advert: adverts){
                                     if (advert.getTypeCode() == type.getCode()){
 
-                                        System.out.println("Cost of Ad" + i + ": " + cost(type,advert)); //gia oles tis diafhmiseis
-                                        total_cost += cost(type,advert); //methodos
+                                        System.out.println("Cost of Ad" + i + ": " + Cost(type,advert)); //gia oles tis diafhmiseis
+                                        total_cost += Cost(type,advert); //methodos
                                         i++;
 
                                     }
@@ -268,9 +276,11 @@ class mainApp{
                         }
 
                         System.out.print("Select product: ");
-                        do{
+                        select = in.nextInt();
+                        while(select < 0 || select > products.size()){
+                            System.out.print("Give right product number: ");
                             select = in.nextInt();
-                        }while(select < 0 || select > products.size());
+                        }
                         
                         pl=0;
                         i=1;
@@ -281,8 +291,8 @@ class mainApp{
                                     if(ad.getTypeCode() == type.getCode()){
                                         
                                         i++;
-                                        System.out.println("Cost of Ad" + i + ": " + cost(type,ad)); //gia oles tis daifhmiseis
-                                        pl += cost(type, ad);
+                                        System.out.println("Cost of Ad" + i + ": " + Cost(type,ad)); //gia oles tis daifhmiseis
+                                        pl += Cost(type, ad);
                                     }
                                 }
 
@@ -311,7 +321,7 @@ class mainApp{
 
     }
 
-    public static int cost(AdType type, Ad advert){
+    public static int Cost(AdType type, Ad advert){
 
         if(type  instanceof PrintedType){
 
@@ -350,10 +360,13 @@ class mainApp{
             System.out.println("9. Show ad cost per product");
             System.out.println("0. Exit");
 
-            int option;
-            do{
-                option = sc.nextInt();
-            }while(option<0 || option>9);
+            int option = sc.nextInt();
+            if(option < 0 || option > 9){ //to pairne ws <0 || >9 alliws
+                while(option < 0 || option > 9);{
+                    System.out.print("Give right option: ");
+                    option = sc.nextInt();
+                }
+            }
 
             return option;
 
@@ -363,10 +376,11 @@ class mainApp{
             System.out.println("1. Printed ");
             System.out.println("2. Digital ");
             System.out.println("3. Web ");
-            int type;
-            do{
+            int type = sc.nextInt();
+            while(type<0 || type>3){
+                System.out.print("Give right type: ");
                 type = sc.nextInt();
-            }while(type<0 || type>3);
+            }
 
             return type;
 
@@ -385,11 +399,13 @@ class mainApp{
             i ++;
         }
 
-        int select;
         System.out.print("Select company: ");
-        do{
+        int select = sc.nextInt();
+        while(select < 0 || select > company.size()){
+            System.out.print("Give right company number: ");
             select = sc.nextInt();
-        }while(select < 0 || select > company.size());
+
+        }
 
         return select;
     }
@@ -400,11 +416,10 @@ class mainApp{
         HashMap<Integer, Integer> hashmap = new HashMap<Integer, Integer>(); //HashMap me key ton kwdiko/plhtos diafhmisewn toy proiontos kai value to plhthos daifhmisewn toy proiontos
 
         //gemisma hashMap
-        int pl;
-        int cost ;
+        int x;
 
         for(Product prods : products){
-           int x=0;
+           x=0;
 
             for(Ad ad : adverts){
                 if(ad.getProdCode() == prods.getCode()){
@@ -414,7 +429,7 @@ class mainApp{
                             if(AdsCosts==1){
                                 x++;
                             }else{
-                                x += cost(type, ad);
+                                x += Cost(type, ad);
                             }
 
                         }
