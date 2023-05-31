@@ -303,7 +303,7 @@ class mainApp{
                         System.out.println("Total cost is:\t" + pl); //synolo apo oles tis diafhmiseis
                         break;
         
-                    default:
+                    case 9:
 
                         ProductsAdsAndCosts(products, adverts, types, 2);
                         break;
