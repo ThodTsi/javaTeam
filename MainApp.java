@@ -10,59 +10,57 @@ class mainApp{
 
     public static void main(String Args[]) throws InputMismatchException{
 
+        ArrayList<CommercialCompany> company = new ArrayList<CommercialCompany>();
+        ArrayList<Product> products = new ArrayList<Product>();
+        ArrayList<AdType> types = new ArrayList<AdType>();
+        ArrayList<Ad> adverts = new ArrayList<Ad>();
+
+        company.add(new CommercialCompany("111","Company1"));
+        company.add(new CommercialCompany("222","Company2"));
+        company.add(new CommercialCompany("333","Company3"));
+        company.add(new CommercialCompany("444","Company4"));
+
+        products.add(new Product(10,"tileorasi","entona xrwmata"));
+        products.add(new Product(20,"fournos","mikrhs diastashs"));
+        products.add(new Product(30,"kanapes","kanapes-krebati"));
+        products.add(new Product(40,"laptop","dynatotha afhs"));
+        products.add(new Product(50,"kaltses","poly zestes"));
+        products.add(new Product(60,"thlefwno","4 kameres"));
+
+        types.add(new PrintedType(100,"efhmerida prwinh","111",2,2,2));
+        types.add(new PrintedType(101,"periodiko","222",4,4,4));
+        types.add(new PrintedType(102,"efhmerida bradinh","333",6,6,6));
+        types.add(new PrintedType(103,"best seller periodiko","444",8,8,8));
+
+        types.add(new DigitalType(104,"radiofwnikos stathmos boreias elladas","111",10,10,10,10));
+        types.add(new DigitalType(105,"bradinh thleoptikh ekpomph","222",15,15,15,15));
+        types.add(new DigitalType(106,"prwinh thleoptikh ekpomph","333",20,20,20,20));
+        types.add(new DigitalType(107,"radiofwnikos stathmos attikhs","444",25,25,25,25));
+
+        types.add(new WebType(108,"diadiktyakh efhmerida","111",0,2,4));
+        types.add(new WebType(109,"facebook","222",1,4,5));
+        types.add(new WebType(110,"instagram","333",1,3,6));
+        types.add(new WebType(111,"tik tok","444",0,6,7));
+
+        adverts.add(new PrintedAd(101,20,3,"aristera katw",500,"First"));
+        adverts.add(new PrintedAd(100,20,2,"aristera panw",550,"Mid"));
+        adverts.add(new PrintedAd(103,30,4,"xwris xrwma",600,"Last"));
+        adverts.add(new PrintedAd(102,10,5,"sto kentro",650,"First"));
+
+        adverts.add(new DigitalAd(106,40,1,"prin jekinhsei h ekpomph",50,"Morning"));
+        adverts.add(new DigitalAd(105,50,2,"molis teleiwsei h ekpomph",52,"Noon"));
+        adverts.add(new DigitalAd(104,60,3,"molis teleiwsei to tragoydi",54,"Afternoon"));
+        adverts.add(new DigitalAd(107,10,4,"prin arxisei to tragoydi",56,"Night"));
+
+        adverts.add(new WebAd(111,60,1,"meta th 1 to brady",1,1));
+        adverts.add(new WebAd(108,50,1,"terma panw",0,2));
+        adverts.add(new WebAd(109,30,1,"to meshmeri",1,3));
+        adverts.add(new WebAd(110,40,1,"ana 50 story",0,4));
+
+        Scanner in = new Scanner(System.in);
+        int option = Choice(1);
+
         try{
-
-            Scanner in = new Scanner(System.in);
-
-            ArrayList<CommercialCompany> company = new ArrayList<CommercialCompany>();
-            ArrayList<Product> products = new ArrayList<Product>();
-            ArrayList<AdType> types = new ArrayList<AdType>();
-            ArrayList<Ad> adverts = new ArrayList<Ad>();
-
-            company.add(new CommercialCompany("111","Company1"));
-            company.add(new CommercialCompany("222","Company2"));
-            company.add(new CommercialCompany("333","Company3"));
-            company.add(new CommercialCompany("444","Company4"));
-
-            products.add(new Product(10,"tileorasi","entona xrwmata"));
-            products.add(new Product(20,"fournos","mikrhs diastashs"));
-            products.add(new Product(30,"kanapes","kanapes-krebati"));
-            products.add(new Product(40,"laptop","dynatotha afhs"));
-            products.add(new Product(50,"kaltses","poly zestes"));
-            products.add(new Product(60,"thlefwno","4 kameres"));
-
-            types.add(new PrintedType(100,"efhmerida prwinh","111",2,2,2));
-            types.add(new PrintedType(101,"periodiko","222",4,4,4));
-            types.add(new PrintedType(102,"efhmerida bradinh","333",6,6,6));
-            types.add(new PrintedType(103,"best seller periodiko","444",8,8,8));
-
-            types.add(new DigitalType(104,"radiofwnikos stathmos boreias elladas","111",10,10,10,10));
-            types.add(new DigitalType(105,"bradinh thleoptikh ekpomph","222",15,15,15,15));
-            types.add(new DigitalType(106,"prwinh thleoptikh ekpomph","333",20,20,20,20));
-            types.add(new DigitalType(107,"radiofwnikos stathmos attikhs","444",25,25,25,25));
-
-            types.add(new WebType(108,"diadiktyakh efhmerida","111",0,2,4));
-            types.add(new WebType(109,"facebook","222",1,4,5));
-            types.add(new WebType(110,"instagram","333",1,3,6));
-            types.add(new WebType(111,"tik tok","444",0,6,7));
-
-            adverts.add(new PrintedAd(101,20,3,"aristera katw",500,"First"));
-            adverts.add(new PrintedAd(100,20,2,"aristera panw",550,"Mid"));
-            adverts.add(new PrintedAd(103,30,4,"xwris xrwma",600,"Last"));
-            adverts.add(new PrintedAd(102,10,5,"sto kentro",650,"First"));
-
-            adverts.add(new DigitalAd(106,40,1,"prin jekinhsei h ekpomph",50,"Morning"));
-            adverts.add(new DigitalAd(105,50,2,"molis teleiwsei h ekpomph",52,"Noon"));
-            adverts.add(new DigitalAd(104,60,3,"molis teleiwsei to tragoydi",54,"Afternoon"));
-            adverts.add(new DigitalAd(107,10,4,"prin arxisei to tragoydi",56,"Night"));
-
-            adverts.add(new WebAd(111,60,1,"meta th 1 to brady",1,1));
-            adverts.add(new WebAd(108,50,1,"terma panw",0,2));
-            adverts.add(new WebAd(109,30,1,"to meshmeri",1,3));
-            adverts.add(new WebAd(110,40,1,"ana 50 story",0,4));
-
-            
-            int option = Menu();
 
             while(option!=0){
 
@@ -71,7 +69,6 @@ class mainApp{
                     case 1:
 
                         System.out.print("Give afm: ");
-                        in.nextLine();
                         String afmCom = in.nextLine();
                         
                         System.out.print("Give name: ");
@@ -83,14 +80,7 @@ class mainApp{
 
                     case 2:
 
-                        System.out.println("Select type: ");
-                        System.out.println("1. Printed ");
-                        System.out.println("2. Digital ");
-                        System.out.println("3. Web ");
-                        int Type;
-                        do{
-                            Type = in.nextInt();
-                        }while(Type<0 || Type>3);
+                        int Type = Choice(2);
 
                         System.out.print("Give code: ");
                         int codeType = in.nextInt();
@@ -141,13 +131,7 @@ class mainApp{
 
                     case 3:
 
-                        System.out.println("Select type: ");
-                        System.out.println("1. Printed ");
-                        System.out.println("2. Digital ");
-                        System.out.println("3. Web ");
-                        do{
-                            Type = in.nextInt();
-                        }while(Type<0 || Type>3);
+                        Type = Choice(2);
 
                         System.out.print("Code of type: ");
                         codeType = in.nextInt();
@@ -175,11 +159,10 @@ class mainApp{
                         if(Type == 1){
                             System.out.print("Number of words: ");
                             int words = in.nextInt();
-                            in.nextLine();
                             System.out.println("Page position: " + "\nFirst\nMid\nLast");
                             String position;
                             //do{
-                                position = in.next();
+                                position = in.nextLine();
                             //}while(position != "First" && position !="Mid" && position != "Last");
 
                             PrintedAd advert = new PrintedAd(codeType, codeProd, duration, details, words, position);
@@ -191,7 +174,7 @@ class mainApp{
                             System.out.println("Timezone: " + "\nMornign\nNoon\nAfternoon\nNight");
                             String timezone;
                             //do{
-                                timezone = in.next();
+                                timezone = in.nextLine();
                             //}while(timezone != "Morning" && timezone != "Noon" && timezone != "Afternoon" && timezone != "Night");
 
                             DigitalAd advert = new DigitalAd(codeType, codeProd, duration, details, dur_sec, timezone);
@@ -200,9 +183,9 @@ class mainApp{
                         }else if(Type == 3){
                             System.out.println("Auto show ad: " + "\n1.Yes\n2.No");
                             int autoshow;
-                           // do{
+                           do{
                                 autoshow = in.nextInt();
-                            //}while(autoshow !=0 && autoshow != 2);
+                            }while(autoshow !=1 && autoshow != 1);
                             
                             if(autoshow==2){
                                 autoshow = 0;
@@ -227,21 +210,8 @@ class mainApp{
                         break;
 
                     case 5:
-
-                        Iterator<CommercialCompany> it2 = company.iterator();
-                        i=1;
-                        while(it2.hasNext()){
-                            System.out.print(i + ". " + it2.next().getName() + "\n");
-                            i++;
-                        }
-
-                        System.out.print("Select company: ");
-                        int select;
-                        do{
-                            select = in.nextInt();
-                        }while(select < 0 || select > company.size());
                         
-                        String afm = company.get(select-1).getAfm();
+                        String afm = company.get(CompanyChoice(company)-1).getAfm(); //CompanyChoide = methodos
 
                         i=1;
                         for(Ad advert: adverts){
@@ -260,18 +230,9 @@ class mainApp{
 
                     case 6:
                         
-                        i = 1;
-                        for(CommercialCompany com: company){
-                            System.out.println(i + ". " + com.getName());
-                            i ++;
-                        }
-
-                        System.out.print("Select company: ");
-                        do{
-                            select = in.nextInt();
-                        }while(select < 0 || select > company.size());
-
+                        int select = CompanyChoice(company); //methodos
                         int total_cost = 0;
+                        i = 1;
 
                         for (AdType type: types){
                             if(company.get(select-1).getAfm().equals(type.getAfm())){
@@ -279,7 +240,9 @@ class mainApp{
                                 for(Ad advert: adverts){
                                     if (advert.getTypeCode() == type.getCode()){
 
+                                        System.out.println("Cost of Ad" + i + ": " + cost(type,advert)); //gia oles tis diafhmiseis
                                         total_cost += cost(type,advert); //methodos
+                                        i++;
 
                                     }
                                 
@@ -292,51 +255,13 @@ class mainApp{
                         break;
 
                     case 7:
-
-                        int pl;
-                        ArrayList<Integer> ads = new ArrayList<Integer>();
-                        HashMap<Integer, Product> adsInProds = new HashMap<Integer, Product>();
-
-                        for(Product prods : products){
-                            pl=0;
-
-                            for(Ad ad : adverts){
-                                if(ad.getProdCode() == prods.getCode()){
-                                    for(AdType type : types){
-                                        if(ad.getTypeCode() == type.getCode()){
-                                            pl ++;
-                                        }
-                                    }
-                                }
-                            }
-
-                            ads.add(pl);
-                            adsInProds.put(pl, prods);
-
-                        }
-                        
-                        ads.sort(Comparator.reverseOrder());
-                        ArrayList<Product> prodsInOrder = new ArrayList<Product>();
-
-                        for(int k : ads){
-                            while(adsInProds.containsKey(k)){
-
-                                prodsInOrder.add(adsInProds.get(k));
-                                adsInProds.remove(k, adsInProds.get(k));
-                            }
-                        }
-
-                        i=0;
-                        for(Product prods: prodsInOrder){
-                            System.out.println(prods.getCode() + ": " + ads.get(i));
-                            i++;
-                        }
+                        ProductsAdsAndCosts(products, adverts, types, 1);
                         break;
 
                     case 8:
 
-                        pl=0;
-                        i = 1;
+                        int pl;
+                        i=1;
                         for(Product prods: products){
                             System.out.println(i + ". " + prods.getCode());
                             i ++;
@@ -346,15 +271,17 @@ class mainApp{
                         do{
                             select = in.nextInt();
                         }while(select < 0 || select > products.size());
-                        i=0;
+                        
+                        pl=0;
+                        i=1;
 
                         for(Ad ad : adverts){
                             if(ad.getProdCode() == products.get(select-1).getCode()){
                                 for(AdType type : types){
                                     if(ad.getTypeCode() == type.getCode()){
-
+                                        
                                         i++;
-                                        System.out.println("Cost of Ad" + i + ": " + cost(type,ad));
+                                        System.out.println("Cost of Ad" + i + ": " + cost(type,ad)); //gia oles tis daifhmiseis
                                         pl += cost(type, ad);
                                     }
                                 }
@@ -362,51 +289,22 @@ class mainApp{
                             }
                         }
 
-                        System.out.println("Total cost is:\t" + pl);
+                        System.out.println("Total cost is:\t" + pl); //synolo apo oles tis diafhmiseis
                         break;
         
                     default:
 
-                        ArrayList<Integer> costs = new ArrayList<Integer>();
-                        HashMap<Integer, Product> prodCost = new HashMap<Integer, Product>();
-
-                        for(Product prods : products){
-                            total_cost = 0;
-
-                            for (Ad advert: adverts){
-
-                                if(advert.getProdCode()==prods.getCode()){
-
-                                    for(AdType type: types){
-
-                                        if (type.getCode()==advert.getTypeCode()){
-
-                                            total_cost += cost(type,advert); //methodos
-
-                                        }
-                                    
-                                    }
-                            
-                                }
-                            } 
-                            costs.add(total_cost);
-                            prodCost.put(total_cost, prods);  
-                        }   
-
-                        costs.sort(Comparator.reverseOrder());
-                        i=0;
-                        for(int k : costs){
-                            System.out.println(prodCost.get(k).toString() + "\tCost of ads:\t" + k);
-                        }                        
+                        ProductsAdsAndCosts(products, adverts, types, 2);
                         break;
 
                 }
 
-                option = Menu();          
+                option = Choice(1);          
 
             }
         
         }catch(InputMismatchException e){
+            System.out.print("Give an integer");
         }
 
 
@@ -416,43 +314,153 @@ class mainApp{
     public static int cost(AdType type, Ad advert){
 
         if(type  instanceof PrintedType){
+
             PrintedAd ad = (PrintedAd)advert;
             PrintedType typ = (PrintedType)type;
             return typ.cost(ad.getWords(), ad.getPosition(), ad.getDur());
 
         }else if(type  instanceof DigitalType){
+
             DigitalAd ad = (DigitalAd)advert;
             DigitalType typ = (DigitalType)type;
             return typ.cost(ad.getDursec(), ad.getTimezone(), ad.getDur());
 
         }else{
+
             WebAd ad = (WebAd)advert;
             WebType typ = (WebType)type;
             return typ.cost(ad.getAuto(), ad.getExtra(), ad.getDur());
         }
     }
 
-    public static int Menu(){
+    public static int Choice(int purpose){
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("1. Insert new company");
-        System.out.println("2. Insert new ad type");
-        System.out.println("3. Insert new ad");
-        System.out.println("4. Show ads");
-        System.out.println("5. Show company's ads");
-        System.out.println("6. Calculate company's cost");
-        System.out.println("7. Number of products' ads");
-        System.out.println("8. Calculate cost of a products' ad");
-        System.out.println("9. Show ad cost per product");
+        if(purpose == 1){
 
-        int option;
-        do{
-            option = sc.nextInt();
-        }while(option<0 || option>9);
+            System.out.println("1. Insert new company");
+            System.out.println("2. Insert new ad type");
+            System.out.println("3. Insert new ad");
+            System.out.println("4. Show ads");
+            System.out.println("5. Show company's ads");
+            System.out.println("6. Calculate company's cost");
+            System.out.println("7. Number of products' ads");
+            System.out.println("8. Calculate cost of a products' ad");
+            System.out.println("9. Show ad cost per product");
+            System.out.println("0. Exit");
 
-        return option;
+            int option;
+            do{
+                option = sc.nextInt();
+            }while(option<0 || option>9);
 
+            return option;
+
+        }else{
+
+            System.out.println("Select type: ");
+            System.out.println("1. Printed ");
+            System.out.println("2. Digital ");
+            System.out.println("3. Web ");
+            int type;
+            do{
+                type = sc.nextInt();
+            }while(type<0 || type>3);
+
+            return type;
+
+        }
+        
     }
 
+    public static int CompanyChoice(ArrayList<CommercialCompany> company){
+
+        Scanner sc = new Scanner(System.in);
+
+
+        int i = 1;
+        for(CommercialCompany com: company){
+            System.out.println(i + ". " + com.getName());
+            i ++;
+        }
+
+        int select;
+        System.out.print("Select company: ");
+        do{
+            select = sc.nextInt();
+        }while(select < 0 || select > company.size());
+
+        return select;
+    }
+
+    //htan sthn oydsia o idios kwdikas...
+    public static void ProductsAdsAndCosts(ArrayList<Product> products, ArrayList<Ad> adverts, ArrayList<AdType> types, int AdsCosts){
+
+        HashMap<Integer, Integer> hashmap = new HashMap<Integer, Integer>(); //HashMap me key ton kwdiko/plhtos diafhmisewn toy proiontos kai value to plhthos daifhmisewn toy proiontos
+
+        //gemisma hashMap
+        int pl;
+        int cost ;
+
+        for(Product prods : products){
+           int x=0;
+
+            for(Ad ad : adverts){
+                if(ad.getProdCode() == prods.getCode()){
+                    for(AdType type : types){
+                        if(ad.getTypeCode() == type.getCode()){
+
+                            if(AdsCosts==1){
+                                x++;
+                            }else{
+                                x += cost(type, ad);
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            hashmap.put(prods.getCode(), x); 
+        }
+
+        //lista kwdikwn parallhlh me to neo tajinomhmeno HashMap poy paragetai apo to hdh yparxwn HashMap
+        ArrayList<Integer> codes = new ArrayList<Integer>();
+        HashMap<Integer, Integer> num = new HashMap<Integer, Integer>();
+
+        int max, p;
+        int size = hashmap.size(); //epeidh allazei to size me to remove
+
+
+        for(int i= 0; i < size; i++){
+
+            //arxikopoihsh max kai p gia na trejei thn prwth fora
+            max = -1; //etsi kai alliws to plhthos h to kostos den mporoyn na einai -1 opote sigoyra tha allajei to max(mpakalistikh taktikh)
+            p = products.get(0).getCode(); //arxikopoihsh me tyxaio kwdiko proiontos mias kai den exei shmasia afoy opws eipame sigoyra tha allajei meta thn prwth fora
+
+            for(Product prods : products){
+                if(hashmap.get(prods.getCode())!= null){ //NullPointerException
+                    if (hashmap.get(prods.getCode()) > max){
+                        p = prods.getCode();
+                        max = hashmap.get(prods.getCode());
+                    }
+                }
+            }
+
+            hashmap.remove(p); //to afairei giati an kapoia proionta exoyn idio plhthos h to idio kostos tote to prwto poy tha brei tha to emfanizei kathe fora
+            codes.add(p); //tajinomei toys kwdikes bash to plhthos diafhmisewn toys
+            num.put(p, max); //to neo tajinomhmeno HashMap parallhlo me to codes
+        }
+
+        //parallhla codes me num, eykolh h emfanish
+        for(Integer code: codes){
+            if (AdsCosts ==1 ){
+                System.out.println("Product: " + code + "\tNumber of ads: "  + num.get(code));
+            }else{
+                System.out.println("Product: " + code + "\tCost of ads: " + num.get(code));
+            }
+        }
+        
+    }
 }
