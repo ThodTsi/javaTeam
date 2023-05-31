@@ -307,7 +307,6 @@ class mainApp{
                                             pl ++;
                                         }
                                     }
-
                                 }
                             }
 
@@ -316,16 +315,22 @@ class mainApp{
 
                         }
                         
-                       /* ads.sort(Comparator.reverseOrder());
+                        ads.sort(Comparator.reverseOrder());
                         ArrayList<Product> prodsInOrder = new ArrayList<Product>();
 
                         for(int k : ads){
-                            while( adsInProds.containsKey(k)){
+                            while(adsInProds.containsKey(k)){
 
                                 prodsInOrder.add(adsInProds.get(k));
                                 adsInProds.remove(k, adsInProds.get(k));
                             }
-                        }*/
+                        }
+
+                        i=0;
+                        for(Product prods: prodsInOrder){
+                            System.out.println(prods.getCode() + ": " + ads.get(i));
+                            i++;
+                        }
                         break;
 
                     case 8:
