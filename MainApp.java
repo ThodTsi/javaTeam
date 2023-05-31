@@ -127,6 +127,7 @@ class mainApp{
                             WebType type = new WebType(codeType, descriptionType, afmComp, ppd, cost_auto,extrap_cost);
                             types.add(type);
                         }
+                        in.nextLine();
                         break;
 
                     case 3:
@@ -315,9 +316,9 @@ class mainApp{
         
         }catch(InputMismatchException e){
             System.out.print("Give an integer");
+        }catch(ClassCastException e2){
+            
         }
-
-
 
     }
 
