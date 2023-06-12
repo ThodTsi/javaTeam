@@ -315,12 +315,15 @@ class mainApp{
 
             }
 
-        //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/company.txt");
             WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
             WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
             WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
         
+         //-------------------------------------end part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         }catch(InputMismatchException e){
             System.out.print("Give an integer");
         }catch(ClassCastException e2){
@@ -495,10 +498,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("COMPANY_LIST\n\n{");
             for ( CommercialCompany c : company){
                 writer.write(c.toString());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
@@ -511,10 +516,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("ITEMS_LIST\n\n{");
             for ( Product p : products){
                 writer.write(p.toString());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
@@ -527,10 +534,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("ADVTYPE_LIST\n\n{");
             for ( AdType t : types){
-                writer.write(t.toString());
+                writer.write(t.toStringFile());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
@@ -543,10 +552,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("ADV_LIST\n\n{");
             for ( Ad a : adverts){
-                writer.write(a.toString());
+                writer.write(a.toStringFile());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){

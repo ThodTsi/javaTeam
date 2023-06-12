@@ -1,6 +1,10 @@
-Code: 10	AFM: tileorasi	Description: entona xrwmata
+ITEMS_LIST
+
+{Code: 10	AFM: tileorasi	Description: entona xrwmata
 Code: 20	AFM: fournos	Description: mikrhs diastashs
 Code: 30	AFM: kanapes	Description: kanapes-krebati
 Code: 40	AFM: laptop	Description: dynatotha afhs
 Code: 50	AFM: kaltses	Description: poly zestes
 Code: 60	AFM: thlefwno	Description: 4 kameres
+
+}

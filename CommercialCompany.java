@@ -19,4 +19,8 @@ public class CommercialCompany{
         return this.name;
     }
 
+    public String toStringFile(){
+        return "\n\tCOMPANY\n\t{\n\t\tNAME " + name + "\n\t\tAFM " + afm ;
+    }
+
 }

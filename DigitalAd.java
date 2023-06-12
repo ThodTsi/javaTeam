@@ -22,8 +22,8 @@ class DigitalAd extends Ad{
         return this.dur_sec;
     }
 
-
-
-
+    public String toStringFile(){
+        return super.toStringFile() + "\n\t\tDURATION_IN_SECONDS " + dur_sec + "\n\t\tTIMEZONE " + timezone + "\n\t\tTYPE Digital\n\t}";
+    }
 
 }
