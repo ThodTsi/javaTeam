@@ -1,9 +1,10 @@
 /*
 Arithos omadas: 063
-Arithmoi mhtrown : p3220127-p3220215-p3220304
+Arithmoi mhtrwwn : p3220127-p3220215-p3220304
 */
 
 
+import java.io.*;
 import java.util.*;
 
 class mainApp{
@@ -313,6 +314,12 @@ class mainApp{
                 option = Choice(1);          
 
             }
+
+        //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/company.txt");
+            WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
+            WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
+            WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
         
         }catch(InputMismatchException e){
             System.out.print("Give an integer");
@@ -478,5 +485,72 @@ class mainApp{
             }
         }
         
+    }
+
+   //-------------------------------------part2------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    public static void WriteCommercialCompany(ArrayList<CommercialCompany> company, String filePath){
+
+        try{
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            for ( CommercialCompany c : company){
+                writer.write(c.toString());
+                writer.newLine();
+            }
+            writer.close();
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void WriteProducts(ArrayList<Product> products, String filePath){
+
+        try{
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            for ( Product p : products){
+                writer.write(p.toString());
+                writer.newLine();
+            }
+            writer.close();
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void WriteTypes(ArrayList<AdType> types, String filePath){
+
+        try{
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            for ( AdType t : types){
+                writer.write(t.toString());
+                writer.newLine();
+            }
+            writer.close();
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void WriteAds(ArrayList<Ad> adverts, String filePath){
+
+        try{
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            for ( Ad a : adverts){
+                writer.write(a.toString());
+                writer.newLine();
+            }
+            writer.close();
+
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 }

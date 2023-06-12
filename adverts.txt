@@ -1,0 +1,12 @@
+Code of type: 101	Code of product: 20	Duration in days: 3	Details: aristera katw		Words: 500	Position: First	
+Code of type: 100	Code of product: 20	Duration in days: 2	Details: aristera panw		Words: 550	Position: Mid	
+Code of type: 103	Code of product: 30	Duration in days: 4	Details: xwris xrwma		Words: 600	Position: Last	
+Code of type: 102	Code of product: 10	Duration in days: 5	Details: sto kentro		Words: 650	Position: First	
+Code of type: 106	Code of product: 40	Duration in days: 1	Details: prin jekinhsei h ekpomph		Duration in seconds: 50	Timezone: Morning	
+Code of type: 105	Code of product: 50	Duration in days: 2	Details: molis teleiwsei h ekpomph		Duration in seconds: 52	Timezone: Noon	
+Code of type: 104	Code of product: 60	Duration in days: 3	Details: molis teleiwsei to tragoydi		Duration in seconds: 54	Timezone: Afternoon	
+Code of type: 107	Code of product: 10	Duration in days: 4	Details: prin arxisei to tragoydi		Duration in seconds: 56	Timezone: Night	
+Code of type: 111	Code of product: 60	Duration in days: 1	Details: meta th 1 to brady		Autoshow: 1	Extra pages: 1	
+Code of type: 108	Code of product: 50	Duration in days: 1	Details: terma panw		Autoshow: 0	Extra pages: 2	
+Code of type: 109	Code of product: 30	Duration in days: 1	Details: to meshmeri		Autoshow: 1	Extra pages: 3	
+Code of type: 110	Code of product: 40	Duration in days: 1	Details: ana 50 story		Autoshow: 0	Extra pages: 4	
