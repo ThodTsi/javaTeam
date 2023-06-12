@@ -19,4 +19,17 @@ public class CommercialCompany{
         return this.name;
     }
 
+    private void createFile(String, ArrayList<String> CommercialCompany){
+        throws IOException {
+            FileWriter writer = new FileWriter(file + ".txt");
+            int size = CommercialCompany.size()
+            for (int i = 0;i<size;i++){
+                writer.write("AFM: " + CommercialCompany.getAfm() + "\nName: " + CommercialCompany.getName());
+            } 
+            writer.close();
+
+        }
+        
+    }
+
 }
