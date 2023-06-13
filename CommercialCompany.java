@@ -32,4 +32,8 @@ public class CommercialCompany{
         
     }
 
+    public String toStringFile(){
+        return "\n\tCOMPANY\n\t{\n\t\tNAME " + name + "\n\t\tAFM " + afm ;
+    }
+
 }
