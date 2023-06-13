@@ -321,6 +321,9 @@ class mainApp{
             WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
             WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
             WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
+
+        //-------------------------------------end part2------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
         
         }catch(InputMismatchException e){
             System.out.print("Give an integer");
