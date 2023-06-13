@@ -17,4 +17,9 @@ public class Product{
     public String toString(){
         return "Code: " + this.code + "\tAFM: " + this.afm + "\tDescription: " + this.description ;
     }
+
+    public String toStringFile(){
+        return "\n\tITEM\n\t{\n\t\tCODE " + code + "\n\t\tDECSR " + description + "\n\t\tSUPPLIER_AFM " + afm ;
+    }
+
 }
