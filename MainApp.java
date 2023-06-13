@@ -77,6 +77,7 @@ class mainApp{
 
                         CommercialCompany comp = new CommercialCompany(afmCom,nameCom);
                         company.add(comp);
+                        WriteCommercialCompany(company, "company.txt");
                         break;
 
                     case 2:
@@ -553,4 +554,63 @@ class mainApp{
             e.printStackTrace();
         }
     }
+
+    public static void ReadComcomp(ArrayList<CommercialCompany> company, String filePath){
+        BufferedReader reader;
+
+		try {
+			reader = new BufferedReader(new FileReader(filePath+".txt"));
+			String line = reader.readLine();
+
+			while (line != null) {
+				line = reader.readLine();
+                    if (line.trim().equals("Company")) {
+                        line = reader.readLine();
+                        if (line.trim().equals("{")) {
+                            if(line.trim().startsWith("AFM")){
+
+                            }
+                            if(line.trim.startsWith("Name")){
+                                
+                            }
+
+			            }
+                    }
+            }
+			reader.close();
+		    catch (IOException e) {
+			    e.printStackTrace();
+		    }
+        }
+    }
+
+    public static void ReadProd(ArrayList<Product> products, String filePath){
+        BufferedReader reader;
+
+		try {
+			reader = new BufferedReader(new FileReader(filePath+".txt"));
+			String line = reader.readLine();
+
+			while (line != null) {
+				line = reader.readLine();
+                    if (line.trim().equals("Product")) {
+                        line = reader.readLine();
+                        if (line.trim().equals("{")) {
+                            if(line.trim().startsWith("AFM")){
+
+                            }
+
+			            }
+                    }
+            }
+			reader.close();
+		    catch (IOException e) {
+			    e.printStackTrace();
+		    }
+        }
+    }
+
+            
+            
+    
 }
