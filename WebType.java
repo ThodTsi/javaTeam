@@ -17,4 +17,8 @@ public class WebType extends AdType{
         }
     }
 
+    public String toStringFile(){
+        return super.toStringFile() + "\n\t\tPRICE_PER_DAY " + ppd + "\n\t\tAUTOSHOW_COST " + cost_auto + "\n\t\tEXTRA_PAGES_COST " + extrap_cost + "\n\t\tTYPE Web\n\t}";
+    }
+
 }
