@@ -21,5 +21,9 @@ public class PrintedType extends AdType{
             return ppwLast * words * dur;
         }
     }
-    
+
+    public String toStringFile(){
+        return super.toStringFile() + "\n\t\tPRICE_PER_WORD_FIRST_PAGE " + ppwFirst + "\n\t\tPRICE_PER_WORD_MID_PAGES " + ppwMid + "\n\t\tPRICE_PER_WORD_LAST_PAGE " + ppwLast + "\n\t\tTYPE Print\n\t}";
+    }
+
 }
