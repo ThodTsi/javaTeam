@@ -1,6 +1,40 @@
-Code: 10	AFM: tileorasi	Description: entona xrwmata
-Code: 20	AFM: fournos	Description: mikrhs diastashs
-Code: 30	AFM: kanapes	Description: kanapes-krebati
-Code: 40	AFM: laptop	Description: dynatotha afhs
-Code: 50	AFM: kaltses	Description: poly zestes
-Code: 60	AFM: thlefwno	Description: 4 kameres
+ITEMS_LIST
+
+{
+	ITEM
+	{
+		CODE 10
+		DECSR entona xrwmata
+		SUPPLIER_AFM tileorasi
+
+	ITEM
+	{
+		CODE 20
+		DECSR mikrhs diastashs
+		SUPPLIER_AFM fournos
+
+	ITEM
+	{
+		CODE 30
+		DECSR kanapes-krebati
+		SUPPLIER_AFM kanapes
+
+	ITEM
+	{
+		CODE 40
+		DECSR dynatotha afhs
+		SUPPLIER_AFM laptop
+
+	ITEM
+	{
+		CODE 50
+		DECSR poly zestes
+		SUPPLIER_AFM kaltses
+
+	ITEM
+	{
+		CODE 60
+		DECSR 4 kameres
+		SUPPLIER_AFM thlefwno
+
+}

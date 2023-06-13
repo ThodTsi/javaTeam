@@ -1,5 +1,24 @@
-Afm:	111	Name:	Company1
-Afm:	222	Name:	Company2
-Afm:	333	Name:	Company3
-Afm:	444	Name:	Company4
-Afm:	123	Name:	dsdsf
+COMPANY_LIST
+
+{
+	COMPANY
+	{
+		NAME Company1
+		AFM 111
+
+	COMPANY
+	{
+		NAME Company2
+		AFM 222
+
+	COMPANY
+	{
+		NAME Company3
+		AFM 333
+
+	COMPANY
+	{
+		NAME Company4
+		AFM 444
+
+}
