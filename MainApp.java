@@ -500,7 +500,7 @@ class mainApp{
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
             writer.write("COMPANY_LIST\n\n{");
             for ( CommercialCompany c : company){
-                writer.write(c.toString());
+                writer.write(c.toStringFileS());
                 writer.newLine();
             }
             writer.write("\n}");
@@ -518,7 +518,7 @@ class mainApp{
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
             writer.write("ITEMS_LIST\n\n{");
             for ( Product p : products){
-                writer.write(p.toString());
+                writer.write(p.toStringFile());
                 writer.newLine();
             }
             writer.write("\n}");
