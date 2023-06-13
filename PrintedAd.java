@@ -23,4 +23,8 @@ class PrintedAd extends Ad{
         return this.position;
     }
 
+    public String toStringFile(){
+        return super.toStringFile() + "\n\t\tWORDS " + words + "\n\t\tPOSITION " + position + "\n\t\tTYPE Print\n\t}";
+    }
+
 }
