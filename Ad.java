@@ -27,4 +27,8 @@ public class Ad{
         return this.code_prod;
     }
 
+    public String toStringFile(){
+        return "\n\tADV\n\t{\n\t\tADVTYPE_CODE " + code_type + "\n\t\tITEM_CODE " + code_prod + "\n\t\tDURATION " + duration + "\n\t\tJUSTIFICATION " + details ;
+    }
+
 }
