@@ -6,7 +6,7 @@ Arithmoi mhtrwwn : p3220127-p3220215-p3220304
 
 import java.io.*;
 import java.util.*;
-import java.io.*;
+
 class mainApp{
 
     public static void main(String Args[]) throws InputMismatchException{
@@ -77,7 +77,6 @@ class mainApp{
 
                         CommercialCompany comp = new CommercialCompany(afmCom,nameCom);
                         company.add(comp);
-                        WriteCommercialCompany(company, "company.txt");
                         break;
 
                     case 2:
@@ -316,15 +315,15 @@ class mainApp{
 
             }
 
-        //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+         //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
             WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/company.txt");
             WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
             WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
             WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
-
-        //-------------------------------------end part2------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
         
+         //-------------------------------------end part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
         }catch(InputMismatchException e){
             System.out.print("Give an integer");
         }catch(ClassCastException e2){
@@ -499,10 +498,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("COMPANY_LIST\n\n{");
             for ( CommercialCompany c : company){
-                writer.write(c.toString());
+                writer.write(c.toStringFile());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
@@ -515,10 +516,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("ITEMS_LIST\n\n{");
             for ( Product p : products){
-                writer.write(p.toString());
+                writer.write(p.toStringFile());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
@@ -531,10 +534,12 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("ADVTYPE_LIST\n\n{");
             for ( AdType t : types){
-                writer.write(t.toString());
+                writer.write(t.toStringFile());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
@@ -547,73 +552,16 @@ class mainApp{
         try{
 
             BufferedWriter writer = new BufferedWriter(new FileWriter(filePath));
+            writer.write("ADV_LIST\n\n{");
             for ( Ad a : adverts){
-                writer.write(a.toString());
+                writer.write(a.toStringFile());
                 writer.newLine();
             }
+            writer.write("\n}");
             writer.close();
 
         }catch(IOException e){
             e.printStackTrace();
         }
     }
-
-    public static void ReadComcomp(ArrayList<CommercialCompany> company, String filePath){
-        BufferedReader reader;
-
-		try {
-			reader = new BufferedReader(new FileReader(filePath+".txt"));
-			String line = reader.readLine();
-
-			while (line != null) {
-				line = reader.readLine();
-                    if (line.trim().equals("Company")) {
-                        line = reader.readLine();
-                        if (line.trim().equals("{")) {
-                            if(line.trim().startsWith("AFM")){
-
-                            }
-                            if(line.trim.startsWith("Name")){
-                                
-                            }
-
-			            }
-                    }
-            }
-			reader.close();
-		    catch (IOException e) {
-			    e.printStackTrace();
-		    }
-        }
-    }
-
-    public static void ReadProd(ArrayList<Product> products, String filePath){
-        BufferedReader reader;
-
-		try {
-			reader = new BufferedReader(new FileReader(filePath+".txt"));
-			String line = reader.readLine();
-
-			while (line != null) {
-				line = reader.readLine();
-                    if (line.trim().equals("Product")) {
-                        line = reader.readLine();
-                        if (line.trim().equals("{")) {
-                            if(line.trim().startsWith("AFM")){
-
-                            }
-
-			            }
-                    }
-            }
-			reader.close();
-		    catch (IOException e) {
-			    e.printStackTrace();
-		    }
-        }
-    }
-
-            
-            
-    
 }
