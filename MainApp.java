@@ -578,15 +578,13 @@ class mainApp{
                     if (line.trim().equals("{")){
                         line = reader.readLine();
                         if(line.toLowerCase().trim().startsWith("name ")){
-                            line = reader.readLine();
                             name = line.trim().substring(5).trim();
                         }
+                        line = reader.readLine();
                         if(line.toLowerCase().trim().startsWith("AFM ")){
-                            line = reader.readLine();
                             afm = line.trim().substring(4).trim();
                         } 
-
-
+                        line = reader.readLine();
                     }
                 }
                 CommercialCompany comp = new CommercialCompany(name,afm);
@@ -594,9 +592,9 @@ class mainApp{
                     company.add(comp);
                 }
             }
-    }catch(IOException e){
-            e.printStackTrace();
-    }
+        }catch(IOException e){
+                e.printStackTrace();
+        }
 
     }
 
@@ -615,17 +613,17 @@ class mainApp{
                     if (line.trim().equals("{")){
                         line = reader.readLine();
                         if(line.toLowerCase().trim().startsWith("code ")){
-                            line = reader.readLine();
                             code = Integer.parseInt(line.trim().substring(5).trim());
                         }
+                        line = reader.readLine();
                         if(line.toLowerCase().trim().startsWith("descr ")){
-                            line = reader.readLine();
                             descr = line.trim().substring(6).trim();
                         }
+                        line = reader.readLine();
                         if(line.toLowerCase().trim().startsWith("supplier_afm ")){
-                            line = reader.readLine();
                             sup_afm = line.trim().substring(13).trim();
                         }
+                        line = reader.readLine();
 
                     }
                 }
@@ -641,24 +639,201 @@ class mainApp{
 
     }
 
+    public static void ReadTypes(ArrayList<AdType> types,String filePath){
+        int code = 0,a = 0,b = 0,c = 0,d = 0;
+        String descr = null, afm = null, type = null;
+        BufferedReader reader;
+        String line;
+        
+        try{
+            reader = new BufferedReader(new FileReader(new File(filePath)));
+            line = reader.readLine();            
+            while (line != null) {
+                if(line.toLowerCase().trim().equals("advtype")){
+                    line = reader.readLine();
+                    if (line.toLowerCase().trim().startsWith("code ")){
+                        code = Integer.parseInt(line.trim().substring(5).trim());
+                    }
+                    line = reader.readLine();
+                    if (line.toLowerCase().trim().startsWith("descr ")){
+                        descr = line.trim().substring(6).trim();
+                    }
+                    line = reader.readLine();
+                    if (line.toLowerCase().trim().startsWith("afm ")){
+                        afm = line.trim().substring(4).trim();
+                    }
+                    line = reader.readLine();
+                    if (line.toLowerCase().trim().startsWith("type ")){
+                        type = type.toLowerCase();
+                        if(type.equals("print")){
+                            if (line.toLowerCase().trim().startsWith("price_per_word_first_page ")){
+                                a = Integer.parseInt(line.trim().substring(26).trim());
+                            }
+                            line = reader.readLine();
+                            if (line.toLowerCase().trim().startsWith("price_per_word_mid_pages ")){
+                                b = Integer.parseInt(line.trim().substring(25).trim());
+                            }
+                            line = reader.readLine();
+                            if (line.toLowerCase().trim().startsWith("price_per_word_last_page ")){
+                                c = Integer.parseInt(line.trim().substring(25).trim());
+                            }
+                            PrintedType Adtype = new PrintedType(code,descr,afm,a,b,c);
+                            if (!(types.contains(Adtype))){
+                                types.add(Adtype);
+                            }
+                            line = reader.readLine();
+                        }
+                        else if(type.equals("digital")){
+                            if (line.toLowerCase().trim().startsWith("price_per_second_morning ")){
+                                a = Integer.parseInt(line.trim().substring(25).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("price_per_second_noon ")){
+                                b = Integer.parseInt(line.trim().substring(22).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("price_per_second_afternoon ")){
+                                c = Integer.parseInt(line.trim().substring(27).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("price_per_second_night ")){
+                                d = Integer.parseInt(line.trim().substring(23).trim());
+                            }
+                            DigitalType Adtype = new DigitalType(code,descr,afm,a,b,c,d);
+                            if (!(types.contains(Adtype))){
+                                types.add(Adtype);
+                            }
+                            line = reader.readLine();
+
+                        }
+                        else if(type.equals("web")){
+                            if(line.toLowerCase().trim().startsWith("price_per_day ")){
+                                a = Integer.parseInt(line.trim().substring(13).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("autoshow_cost ")){
+                                b = Integer.parseInt(line.trim().substring(14).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("extra_pages_cost ")){
+                                c = Integer.parseInt(line.trim().substring(17).trim());
+                            }
+                            WebType Adtype = new WebType(code,descr,afm,a,b,c);
+                            if (!(types.contains(Adtype))){
+                                types.add(Adtype);
+                            }
+                            line = reader.readLine();
+                        }
+                    }
+                }
 
 
 
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
 
+    }      
 
+    public static void ReadAdverts(ArrayList<Ad> ads, String filePath){
 
+		String det = null, type = null, position = null, timezone = null;
+        int code_type = 0 , code_prod = 0, dur=0, words =0, dursec=0, autoshow = 0, extrap=0;
+		BufferedReader reader;
+        String line;
 
+		try {
+            
+			reader = new BufferedReader(new FileReader(new File(filePath)));
+            line = reader.readLine();            
+            while (line != null) {
+                if (line.toLowerCase().trim().equals("adv")) {
+                    line = reader.readLine();
+                    if (line.trim().equals("{")){
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("advtype_code ")){
+                            code_type = Integer.parseInt(line.trim().substring(13).trim());
+                        }
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("item_code ")){
+                            code_type = Integer.parseInt(line.trim().substring(10).trim());
+                        }
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("duration ")){
+                            dur = Integer.parseInt(line.trim().substring(9).trim());
+                        }
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("details ")){
+                            det = line.trim().substring(8).trim();
+                        }
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("type ")){
+                            type = line.trim().substring(6).trim();
+                        }
+                        line = reader.readLine();
 
+                        if (type.equals("Print")){
 
+                            if(line.toLowerCase().trim().startsWith("words ")){
+                                words = Integer.parseInt(line.trim().substring(6).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("position ")){
+                                position = line.trim().substring(9).trim();
+                            }
+                            line = reader.readLine();
 
+                        }else if(type.equals("Digital")){
 
+                            if(line.toLowerCase().trim().startsWith("duration_in_seconds ")){
+                                dursec = Integer.parseInt(line.trim().substring(21).trim());
+                            }
+                            line = reader.readLine();
 
+                            if(line.toLowerCase().trim().startsWith("timezone ")){
+                                timezone = line.trim().substring(10).trim();
+                            }
+                            line = reader.readLine();
 
+                        }else{
 
+                            if(line.toLowerCase().trim().startsWith("autoshow ")){
+                                autoshow = Integer.parseInt(line.trim().substring(9).trim());
+                            }
+                            line = reader.readLine();
+                            if(line.toLowerCase().trim().startsWith("extra_pages ")){
+                                extrap = Integer.parseInt(line.trim().substring(12).trim());
+                            }
+                            line = reader.readLine();
 
+                        }
 
+                    }
+                }
+            }
 
+            if(type.equals("Print")){
+                PrintedAd advert = new PrintedAd(code_prod, code_type, dur, det, words, position);
+                if(!(ads.contains(advert))){
+                ads.add(advert);
+            }
+            }else if (type.equals("Digital")){
+                DigitalAd advert = new DigitalAd(code_type, code_prod, dur, det, dursec, timezone);  
+                if(!(ads.contains(advert))){
+                ads.add(advert);
+            }          
+            }else{
+                WebAd advert = new WebAd(code_type, code_prod, dur, det, autoshow, extrap);
+                if(!(ads.contains(advert))){
+                ads.add(advert);
+            }
+            }
 
+        }catch(IOException e){
+            e.printStackTrace();
+        }
 
+    }
 
 }
