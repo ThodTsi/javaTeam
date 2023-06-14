@@ -59,6 +59,16 @@ class mainApp{
         adverts.add(new WebAd(110,40,1,"ana 50 story",0,4));
 
 
+    //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        ReadCom(company, "C:/Users/30698/Desktop/javateam2/companies.txt");
+        ReadProd(products, "C:/Users/30698/Desktop/javateam2/products.txt");
+        ReadTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
+        ReadAdverts(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
+        
+     //-------------------------------------end part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
         Scanner in = new Scanner(System.in);
         int option = Choice(1);
 
@@ -322,8 +332,8 @@ class mainApp{
             
         }
     //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-        WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/company.txt");
-        WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
+        WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/companies.txt");
+        WriteProducts(products, "C:/Users/30698/Desktop/javateam2/products.txt");
         WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
         WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
         
