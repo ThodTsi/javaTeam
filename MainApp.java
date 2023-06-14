@@ -564,4 +564,35 @@ class mainApp{
             e.printStackTrace();
         }
     }
+
+    public static void ReadCom(ArrayList<CommercialCompany> company, String filePath){
+		
+		BufferedReader reader = null;
+        String line;
+		try {
+			reader = new BufferedReader(new FileReader(new File("products.txt")));
+            line = reader.readLine();
+            while (line != null) {
+                if (line.trim().equals("Product")) {
+                    line = reader.readLine();
+                    if (line.trim().equals("{")){
+                        
+                    } 
+
+
+
+
+
+
+                }
+            }
+        }
+    }
+
+
+
+
+
+
 }
+
