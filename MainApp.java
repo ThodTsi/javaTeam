@@ -563,4 +563,110 @@ class mainApp{
             e.printStackTrace();
         }
     }
+
+    public static void ReadCom(ArrayList<CommercialCompany> company, String filePath){
+		String name = null ,afm = null;
+		BufferedReader reader;
+        String line;
+		try {
+            
+			reader = new BufferedReader(new FileReader(new File(filePath)));
+            line = reader.readLine();            
+            while (line != null) {
+                if (line.toLowerCase().trim().equals("company")) {
+                    line = reader.readLine();
+                    if (line.trim().equals("{")){
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("name ")){
+                            line = reader.readLine();
+                            name = line.trim().substring(5).trim();
+                        }
+                        if(line.toLowerCase().trim().startsWith("AFM ")){
+                            line = reader.readLine();
+                            afm = line.trim().substring(4).trim();
+                    } 
+
+
+
+
+
+
+                    }
+                }
+                CommercialCompany comp = new CommercialCompany(name,afm);
+                if (!(company.contains(comp))){
+                    company.add(comp);
+                }
+            }
+    }catch(IOException e){
+            e.printStackTrace();
+    }
+
+    }
+
+    public static void ReadProd(ArrayList<Product> products, String filePath){
+		String descr =null, sup_afm = null;
+        int code = 0;
+		BufferedReader reader;
+        String line;
+		try {
+            
+			reader = new BufferedReader(new FileReader(new File(filePath)));
+            line = reader.readLine();            
+            while (line != null) {
+                if (line.toLowerCase().trim().equals("item")) {
+                    line = reader.readLine();
+                    if (line.trim().equals("{")){
+                        line = reader.readLine();
+                        if(line.toLowerCase().trim().startsWith("code ")){
+                            line = reader.readLine();
+                            code = Integer.parseInt(line.trim().substring(5).trim());
+                        }
+                        if(line.toLowerCase().trim().startsWith("descr ")){
+                            line = reader.readLine();
+                            descr = line.trim().substring(6).trim();
+                        }
+                        if(line.toLowerCase().trim().startsWith("supplier_afm ")){
+                            line = reader.readLine();
+                            sup_afm = line.trim().substring(13).trim();
+                        }
+
+
+
+
+
+
+                    }
+                }
+            }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        Product prod = new Product(code,descr,sup_afm);
+        if(!(products.contains(prod))){
+            products.add(prod);
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
