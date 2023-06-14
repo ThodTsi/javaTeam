@@ -58,6 +58,7 @@ class mainApp{
         adverts.add(new WebAd(109,30,1,"to meshmeri",1,3));
         adverts.add(new WebAd(110,40,1,"ana 50 story",0,4));
 
+
         Scanner in = new Scanner(System.in);
         int option = Choice(1);
 
@@ -315,20 +316,18 @@ class mainApp{
 
             }
 
-         //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-            WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/company.txt");
-            WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
-            WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
-            WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
-        
-         //-------------------------------------end part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
         }catch(InputMismatchException e){
             System.out.print("Give an integer");
         }catch(ClassCastException e2){
             
         }
+    //-------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        WriteCommercialCompany(company, "C:/Users/30698/Desktop/javateam2/company.txt");
+        WriteProducts(products, "C:/Users/30698/Desktop/javateam2/product.txt");
+        WriteTypes(types, "C:/Users/30698/Desktop/javateam2/types.txt");
+        WriteAds(adverts, "C:/Users/30698/Desktop/javateam2/adverts.txt");
+        
+     //-------------------------------------end part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     }
 
