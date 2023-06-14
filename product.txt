@@ -4,37 +4,37 @@ ITEMS_LIST
 	ITEM
 	{
 		CODE 10
-		DECSR entona xrwmata
-		SUPPLIER_AFM tileorasi
+		DESCR tileorasi
+		SUPPLIER_AFM 1234
 
 	ITEM
 	{
 		CODE 20
-		DECSR mikrhs diastashs
-		SUPPLIER_AFM fournos
+		DESCR fournos
+		SUPPLIER_AFM 1432
 
 	ITEM
 	{
 		CODE 30
-		DECSR kanapes-krebati
-		SUPPLIER_AFM kanapes
+		DESCR kanapes
+		SUPPLIER_AFM 1312
 
 	ITEM
 	{
 		CODE 40
-		DECSR dynatotha afhs
-		SUPPLIER_AFM laptop
+		DESCR laptop
+		SUPPLIER_AFM 2345
 
 	ITEM
 	{
 		CODE 50
-		DECSR poly zestes
-		SUPPLIER_AFM kaltses
+		DESCR kaltsess
+		SUPPLIER_AFM 3245
 
 	ITEM
 	{
 		CODE 60
-		DECSR 4 kameres
-		SUPPLIER_AFM thlefwno
+		DESCR thlefwno
+		SUPPLIER_AFM 4524
 
 }

@@ -19,7 +19,7 @@ public class Product{
     }
 
     public String toStringFile(){
-        return "\n\tITEM\n\t{\n\t\tCODE " + code + "\n\t\tDECSR " + description + "\n\t\tSUPPLIER_AFM " + afm ;
+        return "\n\tITEM\n\t{\n\t\tCODE " + code + "\n\t\tDESCR " + description + "\n\t\tSUPPLIER_AFM " + afm ;
     }
 
 }

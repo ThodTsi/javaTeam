@@ -20,7 +20,7 @@ class WebAd extends Ad{
     }
 
     public String toStringFile(){
-        return super.toStringFile() + "\n\t\tAUTOSHOW " + autoshow + "\n\t\tEXTRA_PAGES " + extrap + "\n\t\tTYPE Web\n\t}";
+        return super.toStringFile() + "\n\t\tTYPE Web\n\t\tAUTOSHOW " + autoshow + "\n\t\tEXTRA_PAGES " + extrap + "\n\t}";
     }
 
 }

@@ -24,7 +24,7 @@ class PrintedAd extends Ad{
     }
 
     public String toStringFile(){
-        return super.toStringFile() + "\n\t\tWORDS " + words + "\n\t\tPOSITION " + position + "\n\t\tTYPE Print\n\t}";
+        return super.toStringFile() + "\n\t\tTYPE Print\n\t\tWORDS " + words + "\n\t\tPOSITION " + position + "\n\t}";
     }
 
 }

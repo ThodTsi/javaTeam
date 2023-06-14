@@ -18,7 +18,7 @@ public class AdType {
     }
     
     public String toStringFile(){
-        return "\n\tADVTYPE\n\t{\n\t\tCODE " + code + "\n\t\tDECSR " + description + "\n\t\tAFM " + afm ;
+        return "\n\tADVTYPE\n\t{\n\t\tCODE " + code + "\n\t\tDESCR " + description + "\n\t\tAFM " + afm ;
     }
 
 }

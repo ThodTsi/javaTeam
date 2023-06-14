@@ -21,12 +21,12 @@ class mainApp{
         company.add(new CommercialCompany("333","Company3"));
         company.add(new CommercialCompany("444","Company4"));
 
-        products.add(new Product(10,"tileorasi","entona xrwmata"));
-        products.add(new Product(20,"fournos","mikrhs diastashs"));
-        products.add(new Product(30,"kanapes","kanapes-krebati"));
-        products.add(new Product(40,"laptop","dynatotha afhs"));
-        products.add(new Product(50,"kaltses","poly zestes"));
-        products.add(new Product(60,"thlefwno","4 kameres"));
+        products.add(new Product(10,"1234","tileorasi"));
+        products.add(new Product(20,"1432","fournos"));
+        products.add(new Product(30,"1312","kanapes"));
+        products.add(new Product(40,"2345","laptop"));
+        products.add(new Product(50,"3245","kaltsess"));
+        products.add(new Product(60,"4524","thlefwno"));
 
         types.add(new PrintedType(100,"efhmerida prwinh","111",2,2,2));
         types.add(new PrintedType(101,"periodiko","222",4,4,4));
@@ -584,11 +584,7 @@ class mainApp{
                         if(line.toLowerCase().trim().startsWith("AFM ")){
                             line = reader.readLine();
                             afm = line.trim().substring(4).trim();
-                    } 
-
-
-
-
+                        } 
 
 
                     }
@@ -631,14 +627,10 @@ class mainApp{
                             sup_afm = line.trim().substring(13).trim();
                         }
 
-
-
-
-
-
                     }
                 }
             }
+
         }catch(IOException e){
             e.printStackTrace();
         }
