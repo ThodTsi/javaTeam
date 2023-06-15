@@ -1,5 +1,4 @@
 ITEMS_LIST
-
 {
 	ITEM
 	{
@@ -7,47 +6,34 @@ ITEMS_LIST
 		DESCR tileorasi
 		SUPPLIER_AFM 1234
 	}
-
 	ITEM
 	{
 		CODE 20
 		DESCR fournos
 		SUPPLIER_AFM 1432
 	}
-
 	ITEM
 	{
 		CODE 30
 		DESCR kanapes
 		SUPPLIER_AFM 1312
 	}
-
 	ITEM
 	{
 		CODE 40
 		DESCR laptop
 		SUPPLIER_AFM 2345
 	}
-
 	ITEM
 	{
 		CODE 50
 		DESCR kaltsess
 		SUPPLIER_AFM 3245
 	}
-
 	ITEM
 	{
 		CODE 60
 		DESCR thlefwno
 		SUPPLIER_AFM 4524
 	}
-
-	ITEM
-	{
-		CODE 0
-		DESCR null
-		SUPPLIER_AFM null
-	}
-
 }
