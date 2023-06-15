@@ -15,32 +15,11 @@ class mainApp {
         ArrayList<AdType> types = new ArrayList<AdType>();
         ArrayList<Ad> adverts = new ArrayList<Ad>();
 
-        products.add(new Product(10, "1234", "tileorasi"));
-        products.add(new Product(20, "1432", "fournos"));
-        products.add(new Product(30, "1312", "kanapes"));
-        products.add(new Product(40, "2345", "laptop"));
-        products.add(new Product(50, "3245", "kaltsess"));
-        products.add(new Product(60, "4524", "thlefwno"));
-
-        adverts.add(new PrintedAd(101, 20, 3, "aristera katw", 500, "First"));
-        adverts.add(new PrintedAd(100, 20, 2, "aristera panw", 550, "Mid"));
-        adverts.add(new PrintedAd(103, 30, 4, "xwris xrwma", 600, "Last"));
-        adverts.add(new PrintedAd(102, 10, 5, "sto kentro", 650, "First"));
-
-        adverts.add(new DigitalAd(106, 40, 1, "prin jekinhsei h ekpomph", 50, "Morning"));
-        adverts.add(new DigitalAd(105, 50, 2, "molis teleiwsei h ekpomph", 52, "Noon"));
-        adverts.add(new DigitalAd(104, 60, 3, "molis teleiwsei to tragoydi", 54, "Afternoon"));
-        adverts.add(new DigitalAd(107, 10, 4, "prin arxisei to tragoydi", 56, "Night"));
-
-        adverts.add(new WebAd(111, 60, 1, "meta th 1 to brady", 1, 1));
-        adverts.add(new WebAd(108, 50, 1, "terma panw", 0, 2));
-        adverts.add(new WebAd(109, 30, 1, "to meshmeri", 1, 3));
-        adverts.add(new WebAd(110, 40, 1, "ana 50 story", 0, 4));
-
         // -------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ReadCom(company, "company.txt");
-        ReadProd(products, "products.txt");
         ReadTypes(types, "types.txt");
+        ReadProd(products, "products.txt");
+        ReadAdverts(adverts, "adverts.txt");
         WriteCommercialCompany(company, "company.txt");
         WriteTypes(types, "types.txt");
         WriteProducts(products, "products.txt");
@@ -733,7 +712,7 @@ class mainApp {
                                     types.add(Adtype);
                                 }
 
-                            } else if (line.toLowerCase().trim().substring(4).trim().equals("web")) {
+                            } else if (line.toLowerCase().trim().substring(5).trim().equals("web")) {
                                 line = reader.readLine();
                                 if (line.toLowerCase().trim().startsWith("price_per_day ")) {
                                     a = Integer.parseInt(line.trim().substring(13).trim());
@@ -785,80 +764,77 @@ class mainApp {
                         line = reader.readLine();
                         if (line.toLowerCase().trim().startsWith("advtype_code ")) {
                             code_type = Integer.parseInt(line.trim().substring(13).trim());
+                            line = reader.readLine();
                         }
-                        line = reader.readLine();
+
                         if (line.toLowerCase().trim().startsWith("item_code ")) {
-                            code_type = Integer.parseInt(line.trim().substring(10).trim());
+                            code_prod = Integer.parseInt(line.trim().substring(10).trim());
+                            line = reader.readLine();
                         }
-                        line = reader.readLine();
                         if (line.toLowerCase().trim().startsWith("duration ")) {
                             dur = Integer.parseInt(line.trim().substring(9).trim());
+                            line = reader.readLine();
                         }
-                        line = reader.readLine();
-                        if (line.toLowerCase().trim().startsWith("details ")) {
-                            det = line.trim().substring(8).trim();
+                        if (line.toLowerCase().trim().startsWith("justification ")) {
+                            det = line.trim().substring(14).trim();
+                            line = reader.readLine();
                         }
-                        line = reader.readLine();
                         if (line.toLowerCase().trim().startsWith("type ")) {
-                            type = line.trim().substring(6).trim();
-                        }
-                        line = reader.readLine();
 
-                        if (type.equals("Print")) {
+                            if (line.toLowerCase().trim().substring(5).trim().equals("print")) {
+                                line = reader.readLine();
+                                if (line.toLowerCase().trim().startsWith("words ")) {
+                                    words = Integer.parseInt(line.trim().substring(6).trim());
+                                    line = reader.readLine();
+                                }
 
-                            if (line.toLowerCase().trim().startsWith("words ")) {
-                                words = Integer.parseInt(line.trim().substring(6).trim());
+                                if (line.toLowerCase().trim().startsWith("position ")) {
+                                    position = line.trim().substring(9).trim();
+                                    line = reader.readLine();
+                                }
+                                if (line.trim().startsWith("}")) {
+                                    PrintedAd adv = new PrintedAd(code_type, code_prod, dur, det, words, position);
+                                    ads.add(adv);
+                                }
+
+                            } else if (line.toLowerCase().trim().substring(5).trim().equals("digital")) {
+                                line = reader.readLine();
+                                if (line.toLowerCase().trim().startsWith("duration_in_seconds ")) {
+                                    dursec = Integer.parseInt(line.trim().substring(21).trim());
+                                    line = reader.readLine();
+                                }
+
+                                if (line.toLowerCase().trim().startsWith("timezone ")) {
+                                    timezone = line.trim().substring(10).trim();
+                                    line = reader.readLine();
+                                }
+                                if (line.trim().startsWith("}")) {
+                                    DigitalAd adv = new DigitalAd(code_type, code_prod, dur, det, dursec, timezone);
+                                    ads.add(adv);
+                                }
+
+                            } else if (line.toLowerCase().trim().substring(5).trim().equals("web")) {
+                                line = reader.readLine();
+                                if (line.toLowerCase().trim().startsWith("autoshow ")) {
+                                    autoshow = Integer.parseInt(line.trim().substring(9).trim());
+                                    line = reader.readLine();
+                                }
+
+                                if (line.toLowerCase().trim().startsWith("extra_pages ")) {
+                                    extrap = Integer.parseInt(line.trim().substring(12).trim());
+                                    line = reader.readLine();
+                                }
+                                if (line.trim().startsWith("}")) {
+                                    WebAd adv = new WebAd(code_type, code_prod, dur, det, autoshow, extrap);
+                                    ads.add(adv);
+                                }
+
                             }
-                            line = reader.readLine();
-                            if (line.toLowerCase().trim().startsWith("position ")) {
-                                position = line.trim().substring(9).trim();
-                            }
-                            line = reader.readLine();
-
-                        } else if (type.equals("Digital")) {
-
-                            if (line.toLowerCase().trim().startsWith("duration_in_seconds ")) {
-                                dursec = Integer.parseInt(line.trim().substring(21).trim());
-                            }
-                            line = reader.readLine();
-
-                            if (line.toLowerCase().trim().startsWith("timezone ")) {
-                                timezone = line.trim().substring(10).trim();
-                            }
-                            line = reader.readLine();
-
-                        } else {
-
-                            if (line.toLowerCase().trim().startsWith("autoshow ")) {
-                                autoshow = Integer.parseInt(line.trim().substring(9).trim());
-                            }
-                            line = reader.readLine();
-                            if (line.toLowerCase().trim().startsWith("extra_pages ")) {
-                                extrap = Integer.parseInt(line.trim().substring(12).trim());
-                            }
-                            line = reader.readLine();
-
                         }
 
                     }
                 }
-            }
-
-            if (type.equals("Print")) {
-                PrintedAd advert = new PrintedAd(code_prod, code_type, dur, det, words, position);
-                if (!(ads.contains(advert))) {
-                    ads.add(advert);
-                }
-            } else if (type.equals("Digital")) {
-                DigitalAd advert = new DigitalAd(code_type, code_prod, dur, det, dursec, timezone);
-                if (!(ads.contains(advert))) {
-                    ads.add(advert);
-                }
-            } else {
-                WebAd advert = new WebAd(code_type, code_prod, dur, det, autoshow, extrap);
-                if (!(ads.contains(advert))) {
-                    ads.add(advert);
-                }
+                line = reader.readLine();
             }
 
         } catch (IOException e) {

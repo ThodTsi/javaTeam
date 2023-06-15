@@ -47,8 +47,8 @@ ADV_LIST
 		DURATION 1
 		JUSTIFICATION prin jekinhsei h ekpomph
 		TYPE Digital
-		DURATION_IN_SECONDS 50
-		TIMEZONE Morning
+		DURATION_IN_SECONDS 0
+		TIMEZONE orning
 	}
 	ADV
 	{
@@ -57,8 +57,8 @@ ADV_LIST
 		DURATION 2
 		JUSTIFICATION molis teleiwsei h ekpomph
 		TYPE Digital
-		DURATION_IN_SECONDS 52
-		TIMEZONE Noon
+		DURATION_IN_SECONDS 2
+		TIMEZONE oon
 	}
 	ADV
 	{
@@ -67,8 +67,8 @@ ADV_LIST
 		DURATION 3
 		JUSTIFICATION molis teleiwsei to tragoydi
 		TYPE Digital
-		DURATION_IN_SECONDS 54
-		TIMEZONE Afternoon
+		DURATION_IN_SECONDS 4
+		TIMEZONE fternoon
 	}
 	ADV
 	{
@@ -77,8 +77,8 @@ ADV_LIST
 		DURATION 4
 		JUSTIFICATION prin arxisei to tragoydi
 		TYPE Digital
-		DURATION_IN_SECONDS 56
-		TIMEZONE Night
+		DURATION_IN_SECONDS 6
+		TIMEZONE ight
 	}
 	ADV
 	{
@@ -119,5 +119,15 @@ ADV_LIST
 		TYPE Web
 		AUTOSHOW 0
 		EXTRA_PAGES 4
+	}
+	ADV
+	{
+		ADVTYPE_CODE 123
+		ITEM_CODE 678
+		DURATION 3
+		JUSTIFICATION sdfsdf
+		TYPE Print
+		WORDS 3
+		POSITION Last
 	}
 }
