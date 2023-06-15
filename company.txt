@@ -22,7 +22,17 @@ COMPANY_LIST
 	}
 	COMPANY
 	{
-		NAME null
-		AFM dfsdfsd
+		NAME dsfdsf
+		AFM 123123
+	}
+	COMPANY
+	{
+		NAME sdvsvsd
+		AFM 12312
+	}
+	COMPANY
+	{
+		NAME sdfsdf
+		AFM 123123
 	}
 }
