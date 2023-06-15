@@ -35,4 +35,9 @@ COMPANY_LIST
 		NAME sdfsdf
 		AFM 123123
 	}
+	COMPANY
+	{
+		NAME sdfsfdsf
+		AFM 123123
+	}
 }

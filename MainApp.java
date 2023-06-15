@@ -22,21 +22,6 @@ class mainApp {
         products.add(new Product(50, "3245", "kaltsess"));
         products.add(new Product(60, "4524", "thlefwno"));
 
-        types.add(new PrintedType(100, "efhmerida prwinh", "111", 2, 2, 2));
-        types.add(new PrintedType(101, "periodiko", "222", 4, 4, 4));
-        types.add(new PrintedType(102, "efhmerida bradinh", "333", 6, 6, 6));
-        types.add(new PrintedType(103, "best seller periodiko", "444", 8, 8, 8));
-
-        types.add(new DigitalType(104, "radiofwnikos stathmos boreias elladas", "111", 10, 10, 10, 10));
-        types.add(new DigitalType(105, "bradinh thleoptikh ekpomph", "222", 15, 15, 15, 15));
-        types.add(new DigitalType(106, "prwinh thleoptikh ekpomph", "333", 20, 20, 20, 20));
-        types.add(new DigitalType(107, "radiofwnikos stathmos attikhs", "444", 25, 25, 25, 25));
-
-        types.add(new WebType(108, "diadiktyakh efhmerida", "111", 0, 2, 4));
-        types.add(new WebType(109, "facebook", "222", 1, 4, 5));
-        types.add(new WebType(110, "instagram", "333", 1, 3, 6));
-        types.add(new WebType(111, "tik tok", "444", 0, 6, 7));
-
         adverts.add(new PrintedAd(101, 20, 3, "aristera katw", 500, "First"));
         adverts.add(new PrintedAd(100, 20, 2, "aristera panw", 550, "Mid"));
         adverts.add(new PrintedAd(103, 30, 4, "xwris xrwma", 600, "Last"));
@@ -701,7 +686,7 @@ class mainApp {
                         }
 
                         if (line.toLowerCase().trim().startsWith("type ")) {
-                            if (line.trim().substring(5).trim().equals("print")) {
+                            if (line.toLowerCase().trim().substring(5).trim().equals("print")) {
                                 line = reader.readLine();
                                 if (line.toLowerCase().trim().startsWith("price_per_word_first_page ")) {
                                     a = Integer.parseInt(line.trim().substring(26).trim());
@@ -722,8 +707,7 @@ class mainApp {
                                     types.add(Adtype);
                                 }
 
-                                line = reader.readLine();
-                            } else if (line.trim().substring(8).trim().equals("digital")) {
+                            } else if (line.toLowerCase().trim().substring(5).trim().equals("digital")) {
                                 line = reader.readLine();
                                 if (line.toLowerCase().trim().startsWith("price_per_second_morning ")) {
                                     a = Integer.parseInt(line.trim().substring(25).trim());
@@ -744,14 +728,12 @@ class mainApp {
                                     d = Integer.parseInt(line.trim().substring(23).trim());
                                     line = reader.readLine();
                                 }
-                                if (line.trim().startsWith(("}"))) {
+                                if (line.trim().startsWith("}")) {
                                     DigitalType Adtype = new DigitalType(code, descr, afm, a, b, c, d);
                                     types.add(Adtype);
                                 }
 
-                                line = reader.readLine();
-
-                            } else if (line.trim().substring(4).trim().equals("web")) {
+                            } else if (line.toLowerCase().trim().substring(4).trim().equals("web")) {
                                 line = reader.readLine();
                                 if (line.toLowerCase().trim().startsWith("price_per_day ")) {
                                     a = Integer.parseInt(line.trim().substring(13).trim());
@@ -771,7 +753,7 @@ class mainApp {
                                     WebType Adtype = new WebType(code, descr, afm, a, b, c);
                                     types.add(Adtype);
                                 }
-                                line = reader.readLine();
+
                             }
                         }
                     }

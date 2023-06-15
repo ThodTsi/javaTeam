@@ -25,7 +25,7 @@ public class DigitalType extends AdType {
     }
 
     public String toStringFile() {
-        return super.toStringFile() + "\n\t\tTYPE Digital\n\t\tPRICE_PER_SECOND_MORING " + ppsMor
+        return super.toStringFile() + "\n\t\tTYPE Digital\n\t\tPRICE_PER_SECOND_MORNING " + ppsMor
                 + "\n\t\tPRICE_PER_SECOND_NOON " + ppsNoon + "\n\t\tPRICE_PER_SECOND_AFTERNOON " + ppsAfternoon
                 + "\n\t\tPRICE_PER_SECOND_NIGHT " + ppsNight + "\n\t}";
     }
