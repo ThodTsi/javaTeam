@@ -36,4 +36,10 @@ ITEMS_LIST
 		DESCR thlefwno
 		SUPPLIER_AFM 4524
 	}
+	ITEM
+	{
+		CODE 50
+		DESCR 3245
+		SUPPLIER_AFM kaltsess
+	}
 }

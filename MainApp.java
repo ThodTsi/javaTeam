@@ -59,6 +59,8 @@ class mainApp {
 
         // -------------------------------------part2----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
         ReadCom(company, "company.txt");
+        ReadProd(products, "products.txt");
+        ReadTypes(types, "types.txt");
         WriteCommercialCompany(company, "company.txt");
         WriteTypes(types, "types.txt");
         WriteProducts(products, "products.txt");
@@ -563,7 +565,7 @@ class mainApp {
                 writer.write(t.toStringFile());
                 writer.newLine();
             }
-            writer.write("\n}");
+            writer.write("}");
             writer.close();
 
         } catch (IOException e) {
@@ -643,19 +645,23 @@ class mainApp {
                         line = reader.readLine();
                         if (line.toLowerCase().trim().startsWith("code ")) {
                             code = Integer.parseInt(line.trim().substring(5).trim());
+                            line = reader.readLine();
                         }
-                        line = reader.readLine();
+
                         if (line.toLowerCase().trim().startsWith("descr ")) {
                             descr = line.trim().substring(6).trim();
+                            line = reader.readLine();
                         }
-                        line = reader.readLine();
+
                         if (line.toLowerCase().trim().startsWith("supplier_afm ")) {
                             sup_afm = line.trim().substring(13).trim();
+                            line = reader.readLine();
                         }
                         line = reader.readLine();
 
                     }
                 }
+                line = reader.readLine();
             }
 
         } catch (IOException e) {
@@ -682,29 +688,36 @@ class mainApp {
                     line = reader.readLine();
                     if (line.toLowerCase().trim().startsWith("code ")) {
                         code = Integer.parseInt(line.trim().substring(5).trim());
+                        line = reader.readLine();
                     }
-                    line = reader.readLine();
+
                     if (line.toLowerCase().trim().startsWith("descr ")) {
                         descr = line.trim().substring(6).trim();
+                        line = reader.readLine();
                     }
-                    line = reader.readLine();
+
                     if (line.toLowerCase().trim().startsWith("afm ")) {
                         afm = line.trim().substring(4).trim();
+                        line = reader.readLine();
                     }
-                    line = reader.readLine();
+
                     if (line.toLowerCase().trim().startsWith("type ")) {
-                        type = type.toLowerCase();
+                        type = line.trim().substring(5).trim();
                         if (type.equals("print")) {
+                            line = reader.readLine();
                             if (line.toLowerCase().trim().startsWith("price_per_word_first_page ")) {
                                 a = Integer.parseInt(line.trim().substring(26).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("price_per_word_mid_pages ")) {
                                 b = Integer.parseInt(line.trim().substring(25).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("price_per_word_last_page ")) {
                                 c = Integer.parseInt(line.trim().substring(25).trim());
+                                line = reader.readLine();
                             }
                             PrintedType Adtype = new PrintedType(code, descr, afm, a, b, c);
                             if (!(types.contains(Adtype))) {
@@ -712,20 +725,25 @@ class mainApp {
                             }
                             line = reader.readLine();
                         } else if (type.equals("digital")) {
+                            line = reader.readLine();
                             if (line.toLowerCase().trim().startsWith("price_per_second_morning ")) {
                                 a = Integer.parseInt(line.trim().substring(25).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("price_per_second_noon ")) {
                                 b = Integer.parseInt(line.trim().substring(22).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("price_per_second_afternoon ")) {
                                 c = Integer.parseInt(line.trim().substring(27).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("price_per_second_night ")) {
                                 d = Integer.parseInt(line.trim().substring(23).trim());
+                                line = reader.readLine();
                             }
                             DigitalType Adtype = new DigitalType(code, descr, afm, a, b, c, d);
                             if (!(types.contains(Adtype))) {
@@ -734,16 +752,20 @@ class mainApp {
                             line = reader.readLine();
 
                         } else if (type.equals("web")) {
+                            line = reader.readLine();
                             if (line.toLowerCase().trim().startsWith("price_per_day ")) {
                                 a = Integer.parseInt(line.trim().substring(13).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("autoshow_cost ")) {
                                 b = Integer.parseInt(line.trim().substring(14).trim());
+                                line = reader.readLine();
                             }
-                            line = reader.readLine();
+
                             if (line.toLowerCase().trim().startsWith("extra_pages_cost ")) {
                                 c = Integer.parseInt(line.trim().substring(17).trim());
+                                line = reader.readLine();
                             }
                             WebType Adtype = new WebType(code, descr, afm, a, b, c);
                             if (!(types.contains(Adtype))) {
@@ -753,6 +775,7 @@ class mainApp {
                         }
                     }
                 }
+                line = reader.readLine();
 
             }
         } catch (IOException e) {

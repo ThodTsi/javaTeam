@@ -23,11 +23,6 @@ COMPANY_LIST
 	COMPANY
 	{
 		NAME null
-		AFM asdasd
-	}
-	COMPANY
-	{
-		NAME sdfsdf
-		AFM 123
+		AFM dfsdfsd
 	}
 }
